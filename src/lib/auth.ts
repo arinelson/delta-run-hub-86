@@ -1,3 +1,4 @@
+
 // Simple authentication logic without a database
 export interface User {
   id: string;
@@ -34,7 +35,7 @@ export const users: User[] = [
     username: "gabrielle_deltarun",
     password: "@gabrielleRun2025",
     displayName: "Gabrielle",
-    avatarId: 3,
+    avatarId: 11, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/gabrielle_deltarun"
   },
@@ -43,7 +44,7 @@ export const users: User[] = [
     username: "moana_deltarun",
     password: "@moanaRun2025",
     displayName: "Moana",
-    avatarId: 4,
+    avatarId: 12, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/moana_deltarun"
   },
@@ -52,7 +53,7 @@ export const users: User[] = [
     username: "cailane_deltarun",
     password: "@cailaneRun2025",
     displayName: "Cailane",
-    avatarId: 5,
+    avatarId: 14, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/cailane_deltarun"
   },
@@ -61,7 +62,7 @@ export const users: User[] = [
     username: "mayara_deltarun",
     password: "@mayaraRun2025",
     displayName: "Mayara",
-    avatarId: 6,
+    avatarId: 16, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/mayara_deltarun"
   },
@@ -70,7 +71,7 @@ export const users: User[] = [
     username: "ciane_deltarun",
     password: "@cianeRun2025",
     displayName: "Ciane",
-    avatarId: 7,
+    avatarId: 3,
     themeColor: "blue",
     personalLink: "https://bit.ly/ciane_deltarun"
   },
@@ -79,7 +80,7 @@ export const users: User[] = [
     username: "lucasferreira_deltarun",
     password: "@lucasferreiraRun2025",
     displayName: "Lucas Ferreira",
-    avatarId: 8,
+    avatarId: 7,
     themeColor: "blue",
     personalLink: "https://bit.ly/lucasferreira_deltarun"
   },
@@ -88,7 +89,7 @@ export const users: User[] = [
     username: "brunasanto_deltarun",
     password: "@brunasantoRun2025",
     displayName: "Bruna Santo",
-    avatarId: 9,
+    avatarId: 13, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/brunasanto_deltarun"
   },
@@ -97,7 +98,7 @@ export const users: User[] = [
     username: "anagodoy_deltarun",
     password: "@anagodoyRun2025",
     displayName: "Ana Godoy",
-    avatarId: 10,
+    avatarId: 15, // Female fitness avatar
     themeColor: "blue",
     personalLink: "https://bit.ly/anagodoy_deltarun"
   }
@@ -126,6 +127,26 @@ export const themeColors = [
   { id: "green", name: "Neon Green", value: "#4ADE80" },
   { id: "orange", name: "Energetic Orange", value: "#F97316" },
   { id: "red", name: "Power Red", value: "#EF4444" },
+];
+
+// Avatar information with fitness archetypes
+export const avatarInfo = [
+  { id: 1, name: "Corredor", gender: "male" },
+  { id: 2, name: "Musculação", gender: "male" },
+  { id: 3, name: "Yoga", gender: "female" },
+  { id: 4, name: "Ciclista", gender: "male" },
+  { id: 5, name: "Nadador", gender: "male" },
+  { id: 6, name: "Boxe", gender: "male" },
+  { id: 7, name: "CrossFit", gender: "male" },
+  { id: 8, name: "Futebol", gender: "male" },
+  { id: 9, name: "Tênis", gender: "female" },
+  { id: 10, name: "Functional", gender: "male" },
+  { id: 11, name: "Pilates", gender: "female" },
+  { id: 12, name: "Dançarina", gender: "female" },
+  { id: 13, name: "Trilha", gender: "female" },
+  { id: 14, name: "Nutrição", gender: "female" },
+  { id: 15, name: "Coach", gender: "female" },
+  { id: 16, name: "Wellness", gender: "female" },
 ];
 
 // Fitness quotes

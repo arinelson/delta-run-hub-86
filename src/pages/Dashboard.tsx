@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -13,15 +13,23 @@ import { themeColors } from "@/lib/auth";
 const Dashboard: React.FC = () => {
   const { user, logout, updateUserPreferences } = useAuth();
   const navigate = useNavigate();
+  const [avatarSrc, setAvatarSrc] = useState<string>("");
 
-  // Placeholder for avatar display
-  const avatarPlaceholder = `https://api.dicebear.com/7.x/personas/svg?seed=${user?.displayName || "Avatar"}`;
-  
   // Get current theme color
   const currentTheme = themeColors.find(t => t.id === user?.themeColor) || themeColors[0];
 
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+      return;
+    }
+
+    // Set the avatar source based on the user's avatarId
+    const avatarPath = `/avatars/${user.avatarId <= 10 ? 'runner' : 'fitness'}-${user.avatarId <= 10 ? user.avatarId : user.avatarId - 10}.svg`;
+    setAvatarSrc(avatarPath);
+  }, [user, navigate]);
+
   if (!user) {
-    navigate("/");
     return null;
   }
 
@@ -67,16 +75,20 @@ const Dashboard: React.FC = () => {
               style={{ borderColor: currentTheme.value }}
             >
               <img 
-                src={avatarPlaceholder} 
+                src={avatarSrc} 
                 alt={user.displayName} 
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = `https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`;
+                }}
               />
             </div>
           </div>
           
           <div className="text-center sm:text-left">
             <h2 className="text-2xl font-bold mb-1">
-              Bem-vindo(a) ao Team Delta, <span className="text-glow" style={{ color: currentTheme.value }}>{user.displayName}</span>
+              Bem-vindo(a) ao Team Delta, <span className="text-emphasis" style={{ color: currentTheme.value }}>{user.displayName}</span>
             </h2>
             <p className="text-gray-400 mb-3">
               Aqui está seu briefing para a campanha Delta Run Muscle

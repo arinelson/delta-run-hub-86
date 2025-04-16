@@ -13,13 +13,16 @@ export const ThemeToggle: React.FC = () => {
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       aria-label="Toggle theme"
-      className="rounded-full"
+      className="rounded-full border border-white/20 bg-white/10 backdrop-blur-sm"
     >
       {theme === "dark" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+        <Sun className="h-[1.2rem] w-[1.2rem] text-yellow-300 transition-all" />
       ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+        <Moon className="h-[1.2rem] w-[1.2rem] text-indigo-400 transition-all" />
       )}
+      <span className="sr-only">
+        {theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      </span>
     </Button>
   );
 };

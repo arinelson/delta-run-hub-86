@@ -82,10 +82,39 @@
   @apply bg-gradient-card bg-opacity-20 backdrop-blur-sm border border-white/10 shadow-lg;
 }
 
-.text-glow {
-  text-shadow: 0 0 5px rgba(0, 245, 255, 0.7);
+/* Replace neon glow with more subtle emphasis */
+.text-emphasis {
+  @apply font-bold;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+.light .text-emphasis {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .neon-border {
   @apply border border-delta-neon shadow-[0_0_10px_rgba(0,245,255,0.5)];
+}
+
+/* Make light mode more white and contrasted */
+.light {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --border: 214 32% 91%;
+}
+
+/* Improved animation for avatar selection */
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(0, 245, 255, 0.5); 
+  }
+}
+
+.animate-glow {
+  animation: glow 2s infinite;
 }
