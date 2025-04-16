@@ -26,7 +26,7 @@ const FilesTab: React.FC = () => {
       icon: FileImage,
       title: "Imagens das Peças",
       links: [
-        { href: "https://docs.google.com/document/d/143-yMwNpq41vhiNq9g4ZFUyCKRyUZ12J-4rA2xvDUlc/edit?usp=sharing", text: "Lookbook Delta Run Muscle" },
+        { href: "https://docs.google.com/document/d/143-yMwNpq41vhiNq9g4ZFUyCKRyUZ12J-4rA2xvDUlc/edit?usp=sharing", text: "Lookbook Delta Run Muscle", target: "_self" },
         { href: "#", text: "Fotos Lifestyle" },
         { href: "#", text: "Fotos Detalhes Técnicos" }
       ]
