@@ -147,6 +147,9 @@ const Dashboard: React.FC = () => {
         <footer className="mt-12 text-center text-xs sm:text-sm text-gray-500">
           <p>&copy;Todos os direitos reservados.</p>
           <p className="mt-1">Área exclusiva para influenciadores. Não compartilhe estas informações.</p>
+
+          <br>
+          <br>
           <p>iDEALIZADO POR</p>
           <a 
             href="https://instagram.com/arinelson.me" 
