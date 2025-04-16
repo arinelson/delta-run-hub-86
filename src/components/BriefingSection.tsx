@@ -38,7 +38,7 @@ const BriefingSection: React.FC = () => {
           </span>
         </CardTitle>
         <CardDescription>
-          Promova a linha Delta Run Muscle e destaque os preços especiais exclusivos
+          Promover a linha Delta Run Muscle e destacar o propósito exclusivo da Linha e os preços especiais exclusivos 
         </CardDescription>
       </CardHeader>
       <CardContent>
