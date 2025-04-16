@@ -145,8 +145,19 @@ const Dashboard: React.FC = () => {
         
         {/* Footer */}
         <footer className="mt-12 text-center text-xs sm:text-sm text-gray-500">
-          <p>&copy; 2025 Delta Fitness Brazil. Todos os direitos reservados.</p>
+          <p>&copy;Todos os direitos reservados.</p>
           <p className="mt-1">Área exclusiva para influenciadores. Não compartilhe estas informações.</p>
+          <p>iDEALIZADO POR</p>
+          <a 
+            href="https://instagram.com/arinelson.me" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="underline hover:text-primary transition-colors"
+          >
+            ARINELSON SANTOS
+          </a>
+            
+            
         </footer>
       </main>
     </div>
