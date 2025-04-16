@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -16,7 +15,6 @@ const Dashboard: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState<string>("");
   const isMobile = useIsMobile();
 
-  // Get current theme color - memoized to avoid recalculations
   const currentTheme = useMemo(() => 
     themeColors.find(t => t.id === user?.themeColor) || themeColors[0], 
     [user?.themeColor]
@@ -33,25 +31,20 @@ const Dashboard: React.FC = () => {
     root.classList.add("dark");
   }, [user, navigate]);
 
-  // Improve avatar loading with memoization and preloading
   useEffect(() => {
     if (!user) {
       navigate("/");
       return;
     }
 
-    // Determine avatar type and index
     const isRunnerAvatar = user.avatarId <= 10;
     const avatarType = isRunnerAvatar ? 'runner' : 'fitness';
     const avatarIndex = isRunnerAvatar ? user.avatarId : user.avatarId - 10;
     
-    // Set the avatar source path
     const avatarPath = `/avatars/${avatarType}-${avatarIndex}.svg`;
     
-    // Set the avatar source directly without fallback to ensure SVG icons show correctly
     setAvatarSrc(avatarPath);
 
-    // No cleanup needed since we're not using Image object anymore
     return () => {};
   }, [user, navigate]);
 
@@ -66,7 +59,6 @@ const Dashboard: React.FC = () => {
         background: `linear-gradient(135deg, ${currentTheme.value}22, ${currentTheme.value}05)`,
       }}
     >
-      {/* Header/Navbar */}
       <header className="backdrop-blur-sm border-b border-white/10 sticky top-0 z-10 px-4 py-3">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
@@ -92,7 +84,6 @@ const Dashboard: React.FC = () => {
       </header>
       
       <main className="container mx-auto px-4 py-6">
-        {/* Welcome section with optimized avatar */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start mb-8 p-4 sm:p-6 rounded-lg glass-card">
           <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
             <div 
@@ -107,7 +98,6 @@ const Dashboard: React.FC = () => {
                   loading="eager"
                   onError={(e) => {
                     console.error(`Failed to load avatar: ${avatarSrc}`);
-                    // Don't replace with DiceBear so we can see the SVG icons
                   }}
                 />
               ) : (
@@ -129,17 +119,26 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
         
-        {/* Main content */}
         <BriefingSection />
         
-        {/* Footer */}
         <footer className="mt-12 text-center text-xs sm:text-sm text-gray-500">
           <p>&copy;Todos os direitos reservados.</p>
           <p className="mt-1">Área exclusiva para influenciadores. Não compartilhe estas informações.</p>
 
           <div className="mt-4">
-            <p>iDEALIZADO POR
-              <a href="https://instagram.com/arinelson.me" target="_blank" rel="noopener noreferrer"> ARINELSON SANTOS </a>
+            <p>
+              IDEALIZADO POR{" "}
+              <a 
+                href="https://instagram.com/arinelson.me" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#33C3F0] hover:text-[#1EAEDB] transition-colors font-medium"
+                style={{
+                  textShadow: "0 0 10px rgba(51, 195, 240, 0.5)",
+                }}
+              >
+                ARINELSON SANTOS
+              </a>
             </p>
           </div>
         </footer>
