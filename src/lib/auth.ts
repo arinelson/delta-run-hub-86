@@ -110,6 +110,7 @@ export type AuthContextType = {
   login: (username: string, password: string) => Promise<boolean>;
   logout: () => void;
   updateUserPreferences: (updates: Partial<User>) => void;
+  loading: boolean;
 };
 
 // Function to authenticate user
