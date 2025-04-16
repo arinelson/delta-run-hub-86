@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { AuthContextType, User, authenticateUser } from "@/lib/auth";
 import { useToast } from "@/components/ui/use-toast";
@@ -81,7 +82,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         toast({
           title: "Aviso",
           description: "Seu login foi bem-sucedido, mas pode não persistir em atualizações de página devido a configurações do navegador.",
-          variant: "warning",
+          variant: "destructive", // Changed from "warning" to "destructive"
           duration: 5000,
         });
       }
@@ -138,7 +139,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       toast({
         title: "Aviso",
         description: "Suas preferências foram atualizadas, mas podem não persistir em atualizações de página.",
-        variant: "warning",
+        variant: "destructive", // Changed from "warning" to "destructive"
         duration: 3000,
       });
     }
