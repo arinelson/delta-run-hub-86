@@ -12,11 +12,11 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Protected route component
+// Protected route component with improved error handling
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   const { user, loading } = useAuth();
   
-  // Show nothing while checking authentication
+  // Show loading state while checking authentication
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">
       <div className="animate-pulse text-center">
@@ -31,6 +31,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
     </div>;
   }
   
+  // Redirect to login if not authenticated
   if (!user) {
     return <Navigate to="/" replace />;
   }
@@ -38,10 +39,17 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   return children;
 };
 
+// Redirect component for base route
+const Home = () => {
+  const { user } = useAuth();
+  return <Navigate to={user ? "/dashboard" : "/"} replace />;
+};
+
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/index.html" element={<Home />} /> {/* Handle default Netlify route */}
       <Route 
         path="/dashboard" 
         element={
@@ -55,19 +63,20 @@ const AppRoutes = () => {
   );
 };
 
+// Initialize authentication before rendering the app
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <AuthProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider>
+        <AuthProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
             <AppRoutes />
-          </BrowserRouter>
-        </TooltipProvider>
-      </AuthProvider>
-    </ThemeProvider>
+          </TooltipProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 

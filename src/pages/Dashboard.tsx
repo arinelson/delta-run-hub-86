@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -20,6 +21,7 @@ const Dashboard: React.FC = () => {
     [user?.themeColor]
   );
 
+  // Ensure user is authenticated and set theme
   useEffect(() => {
     if (!user) {
       navigate("/");
@@ -29,11 +31,28 @@ const Dashboard: React.FC = () => {
     const root = window.document.documentElement;
     root.classList.remove("light");
     root.classList.add("dark");
-  }, [user, navigate]);
+    
+    // Check user session periodically
+    const checkSession = setInterval(() => {
+      try {
+        const savedUser = localStorage.getItem("deltaRunUser");
+        if (!savedUser) {
+          console.warn("Session lost, redirecting to login");
+          clearInterval(checkSession);
+          logout();
+          navigate("/");
+        }
+      } catch (error) {
+        console.error("Error checking session:", error);
+      }
+    }, 30000); // Check every 30 seconds
+    
+    return () => clearInterval(checkSession);
+  }, [user, navigate, logout]);
 
+  // Handle avatar loading
   useEffect(() => {
     if (!user) {
-      navigate("/");
       return;
     }
 
@@ -44,9 +63,7 @@ const Dashboard: React.FC = () => {
     const avatarPath = `/avatars/${avatarType}-${avatarIndex}.svg`;
     
     setAvatarSrc(avatarPath);
-
-    return () => {};
-  }, [user, navigate]);
+  }, [user]);
 
   if (!user) {
     return null;
