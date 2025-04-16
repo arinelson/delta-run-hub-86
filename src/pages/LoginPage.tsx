@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Lock, User, Activity } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
