@@ -1,8 +1,19 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CheckCircle2, XCircle, Link, Zap, Info, Trophy, MessageSquare } from "lucide-react";
+import { 
+  CheckCircle2, 
+  XCircle, 
+  Link, 
+  Zap, 
+  Info, 
+  Trophy, 
+  MessageSquare,
+  FileImage,
+  FileText,
+  FileArchive,
+  Folder
+} from "lucide-react";
 
 const BriefingSection: React.FC = () => {
   return (
@@ -19,13 +30,14 @@ const BriefingSection: React.FC = () => {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="objetivo" className="w-full">
-          <TabsList className="grid grid-cols-3 md:grid-cols-6 mb-6">
+          <TabsList className="grid grid-cols-3 md:grid-cols-7 mb-6">
             <TabsTrigger value="objetivo">Objetivo</TabsTrigger>
             <TabsTrigger value="linha">Sobre a Linha</TabsTrigger>
             <TabsTrigger value="conteudo">Conteúdo</TabsTrigger>
             <TabsTrigger value="do">Do's</TabsTrigger>
             <TabsTrigger value="dont">Don'ts</TabsTrigger>
             <TabsTrigger value="personalize">Personalize</TabsTrigger>
+            <TabsTrigger value="arquivos">Arquivos</TabsTrigger>
           </TabsList>
           
           <TabsContent value="objetivo" className="space-y-4">
@@ -225,6 +237,109 @@ const BriefingSection: React.FC = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="arquivos" className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="p-4 hover:bg-white/5 transition-colors">
+                <div className="flex items-start space-x-3">
+                  <FileImage className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Imagens das Peças</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Lookbook Delta Run Muscle</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Fotos Lifestyle</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Fotos Detalhes Técnicos</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-4 hover:bg-white/5 transition-colors">
+                <div className="flex items-start space-x-3">
+                  <FileText className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Informações Técnicas</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Catálogo Completo</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Especificações dos Tecidos</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Guia de Medidas</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-4 hover:bg-white/5 transition-colors">
+                <div className="flex items-start space-x-3">
+                  <Folder className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Materiais de Apoio</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Sugestões de Legendas</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Templates Stories</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Músicas Sugeridas</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-4 hover:bg-white/5 transition-colors">
+                <div className="flex items-start space-x-3">
+                  <FileArchive className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">Arquivos de Suporte</h3>
+                    <ul className="space-y-2">
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Kit de Mídia Completo</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Vídeos de Apoio</a>
+                      </li>
+                      <li className="flex items-center space-x-2">
+                        <Link className="h-4 w-4" />
+                        <a href="#" className="text-delta-neon hover:underline">Briefing em PDF</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div className="mt-6 p-4 rounded-lg border border-delta-neon/30">
+              <p className="text-center text-sm">
+                Todos os arquivos são de uso exclusivo para influenciadores do Team Delta.
+                Não compartilhe estes materiais com terceiros.
+              </p>
             </div>
           </TabsContent>
         </Tabs>
