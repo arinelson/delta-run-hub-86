@@ -100,12 +100,13 @@
   will-change: box-shadow;
 }
 
-/* Fix para rolagem horizontal em mobile */
+/* Enhanced horizontal scrolling */
 .scroll-x-container {
   @apply overflow-x-auto overscroll-x-contain pb-3 -mb-3;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Improved iOS scrolling */
 }
 
 .scroll-x-container::-webkit-scrollbar {
@@ -121,10 +122,18 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  will-change: transform;
 }
 
 /* Transições otimizadas */
 .optimized-transition {
   transition-property: transform, opacity;
   will-change: transform, opacity;
+}
+
+/* Melhorias específicas para tabs e scroll areas */
+[data-orientation="horizontal"] > [data-radix-scroll-area-viewport] {
+  transform: translateZ(0); /* Hardware acceleration */
+  touch-action: pan-x; /* Enable horizontal panning on touch devices */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }

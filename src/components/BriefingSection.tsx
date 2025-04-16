@@ -71,19 +71,22 @@ const BriefingSection: React.FC = () => {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="objetivo" className="w-full" ref={tabsRef}>
-          <div className="relative w-full mb-6">
-            <ScrollArea className="w-full">
-              <TabsList className="inline-flex w-max min-w-full px-1">
-                {tabItems.map((tab) => (
-                  <TabsTrigger 
-                    key={tab.value} 
-                    value={tab.value}
-                    className="px-3 py-1.5 text-sm whitespace-nowrap"
-                  >
-                    {tab.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
+          <div className="relative w-full mb-6 overflow-hidden">
+            {/* Improved ScrollArea with better overflow handling */}
+            <ScrollArea className="w-full pb-4" orientation="horizontal">
+              <div className="w-max min-w-full flex">
+                <TabsList className="flex w-max px-1 gap-1 h-auto py-1">
+                  {tabItems.map((tab) => (
+                    <TabsTrigger 
+                      key={tab.value} 
+                      value={tab.value}
+                      className="px-3 py-1.5 text-sm whitespace-nowrap flex-shrink-0 scroll-x-item"
+                    >
+                      {tab.label}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
             </ScrollArea>
           </div>
           

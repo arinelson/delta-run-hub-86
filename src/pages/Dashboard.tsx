@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -16,8 +16,11 @@ const Dashboard: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState<string>("");
   const isMobile = useIsMobile();
 
-  // Get current theme color
-  const currentTheme = themeColors.find(t => t.id === user?.themeColor) || themeColors[0];
+  // Get current theme color - memoized to avoid recalculations
+  const currentTheme = useMemo(() => 
+    themeColors.find(t => t.id === user?.themeColor) || themeColors[0], 
+    [user?.themeColor]
+  );
 
   useEffect(() => {
     if (!user) {
@@ -30,15 +33,37 @@ const Dashboard: React.FC = () => {
     root.classList.add("dark");
   }, [user, navigate]);
 
+  // Improve avatar loading with memoization and preloading
   useEffect(() => {
     if (!user) {
       navigate("/");
       return;
     }
 
-    // Set the avatar source based on the user's avatarId
-    const avatarPath = `/avatars/${user.avatarId <= 10 ? 'runner' : 'fitness'}-${user.avatarId <= 10 ? user.avatarId : user.avatarId - 10}.svg`;
-    setAvatarSrc(avatarPath);
+    // Determine avatar type and index
+    const isRunnerAvatar = user.avatarId <= 10;
+    const avatarType = isRunnerAvatar ? 'runner' : 'fitness';
+    const avatarIndex = isRunnerAvatar ? user.avatarId : user.avatarId - 10;
+    
+    // Set the avatar source path
+    const avatarPath = `/avatars/${avatarType}-${avatarIndex}.svg`;
+    
+    // Preload the avatar image
+    const img = new Image();
+    img.src = avatarPath;
+    img.onload = () => {
+      setAvatarSrc(avatarPath);
+    };
+    img.onerror = () => {
+      // Fallback to DiceBear avatar if the SVG fails to load
+      setAvatarSrc(`https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`);
+    };
+
+    // Cleanup the image on component unmount
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [user, navigate]);
 
   if (!user) {
@@ -78,23 +103,29 @@ const Dashboard: React.FC = () => {
       </header>
       
       <main className="container mx-auto px-4 py-6">
-        {/* Welcome section */}
+        {/* Welcome section with optimized avatar */}
         <div className="flex flex-col sm:flex-row items-center sm:items-start mb-8 p-4 sm:p-6 rounded-lg glass-card">
           <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6">
             <div 
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 overflow-hidden"
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 overflow-hidden hardware-accelerated"
               style={{ borderColor: currentTheme.value }}
             >
-              <img 
-                src={avatarSrc} 
-                alt={user.displayName} 
-                className="w-full h-full object-cover"
-                loading="lazy"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = `https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`;
-                }}
-              />
+              {avatarSrc ? (
+                <img 
+                  src={avatarSrc} 
+                  alt={user.displayName} 
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = `https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`;
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-delta-blue/30">
+                  <div className="animate-spin h-6 w-6 border-2 border-delta-neon rounded-full border-t-transparent"></div>
+                </div>
+              )}
             </div>
           </div>
           
