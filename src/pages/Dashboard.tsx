@@ -150,9 +150,9 @@ const Dashboard: React.FC = () => {
 
           <br>
           <br>
-          <p>iDEALIZADO POR</p>
-          <a href="https://instagram.com/arinelson.me" 
-            target="_blank"> ARINELSON SANTOS </a>
+          <p>iDEALIZADO POR
+          <a href="https://instagram.com/arinelson.me" target="_blank"> ARINELSON SANTOS </a>
+          </p>
             
             
         </footer>
