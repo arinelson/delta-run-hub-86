@@ -52,10 +52,11 @@ const AvatarSelector: React.FC<AvatarSelectorProps> = ({ selectedId, onChange })
   // Get current avatar
   const currentAvatar = avatars[currentIndex];
   
-  // Properly handle avatar image loading and fallback
+  // Don't use fallback to dicebear - let the SVG display properly
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-    target.src = `https://api.dicebear.com/7.x/personas/svg?seed=${currentAvatar.name}`;
+    console.error(`Failed to load avatar: ${currentAvatar.src}`);
+    // Just log the error but don't replace with dicebear avatar
+    // as we want to show the SVG icons for fitness activities
   };
 
   return (
@@ -78,7 +79,7 @@ const AvatarSelector: React.FC<AvatarSelectorProps> = ({ selectedId, onChange })
             <img
               src={currentAvatar.src}
               alt={currentAvatar.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               onError={handleImageError}
             />
           </div>

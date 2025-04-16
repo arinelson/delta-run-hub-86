@@ -48,22 +48,11 @@ const Dashboard: React.FC = () => {
     // Set the avatar source path
     const avatarPath = `/avatars/${avatarType}-${avatarIndex}.svg`;
     
-    // Preload the avatar image
-    const img = new Image();
-    img.src = avatarPath;
-    img.onload = () => {
-      setAvatarSrc(avatarPath);
-    };
-    img.onerror = () => {
-      // Fallback to DiceBear avatar if the SVG fails to load
-      setAvatarSrc(`https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`);
-    };
+    // Set the avatar source directly without fallback to ensure SVG icons show correctly
+    setAvatarSrc(avatarPath);
 
-    // Cleanup the image on component unmount
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
+    // No cleanup needed since we're not using Image object anymore
+    return () => {};
   }, [user, navigate]);
 
   if (!user) {
@@ -114,11 +103,11 @@ const Dashboard: React.FC = () => {
                 <img 
                   src={avatarSrc} 
                   alt={user.displayName} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="eager"
                   onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = `https://api.dicebear.com/7.x/personas/svg?seed=${user.displayName}`;
+                    console.error(`Failed to load avatar: ${avatarSrc}`);
+                    // Don't replace with DiceBear so we can see the SVG icons
                   }}
                 />
               ) : (
@@ -148,13 +137,11 @@ const Dashboard: React.FC = () => {
           <p>&copy;Todos os direitos reservados.</p>
           <p className="mt-1">Área exclusiva para influenciadores. Não compartilhe estas informações.</p>
 
-          <br>
-          <br>
-          <p>iDEALIZADO POR
-          <a href="https://instagram.com/arinelson.me" target="_blank"> ARINELSON SANTOS </a>
-          </p>
-            
-            
+          <div className="mt-4">
+            <p>iDEALIZADO POR
+              <a href="https://instagram.com/arinelson.me" target="_blank" rel="noopener noreferrer"> ARINELSON SANTOS </a>
+            </p>
+          </div>
         </footer>
       </main>
     </div>
