@@ -1,12 +1,9 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/context/AuthContext";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
 import { Lock, User, Activity } from "lucide-react";
-import { useTheme } from "@/context/ThemeContext";
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -14,23 +11,12 @@ const LoginPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
-  const { theme } = useTheme();
 
-  // Force dark theme on login page and save previous setting
   useEffect(() => {
     const root = window.document.documentElement;
-    if (!root.classList.contains("dark")) {
-      root.classList.add("dark");
-    }
-    
-    // Cleanup function to reset theme when leaving the page
-    return () => {
-      if (theme === "light" && root.classList.contains("dark")) {
-        root.classList.remove("dark");
-        root.classList.add("light");
-      }
-    };
-  }, [theme]);
+    root.classList.remove("light");
+    root.classList.add("dark");
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

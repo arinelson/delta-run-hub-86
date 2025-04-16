@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -17,6 +16,17 @@ const Dashboard: React.FC = () => {
 
   // Get current theme color
   const currentTheme = themeColors.find(t => t.id === user?.themeColor) || themeColors[0];
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+      return;
+    }
+
+    const root = window.document.documentElement;
+    root.classList.remove("light");
+    root.classList.add("dark");
+  }, [user, navigate]);
 
   useEffect(() => {
     if (!user) {
