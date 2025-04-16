@@ -1,4 +1,3 @@
-
 // Simple authentication logic without a database
 export interface User {
   id: string;
@@ -7,6 +6,7 @@ export interface User {
   displayName: string;
   avatarId: number;
   themeColor: string;
+  personalLink: string;
 }
 
 // Predefined users
@@ -17,7 +17,8 @@ export const users: User[] = [
     password: "@johnalvesRun2025",
     displayName: "John Alves",
     avatarId: 1,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/johnalves_deltarun"
   },
   {
     id: "2",
@@ -25,7 +26,8 @@ export const users: User[] = [
     password: "@gabrielRun2025",
     displayName: "Gabriel",
     avatarId: 2,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/gabriel_deltarun"
   },
   {
     id: "3",
@@ -33,7 +35,8 @@ export const users: User[] = [
     password: "@gabrielleRun2025",
     displayName: "Gabrielle",
     avatarId: 3,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/gabrielle_deltarun"
   },
   {
     id: "4",
@@ -41,7 +44,8 @@ export const users: User[] = [
     password: "@moanaRun2025",
     displayName: "Moana",
     avatarId: 4,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/moana_deltarun"
   },
   {
     id: "5",
@@ -49,7 +53,8 @@ export const users: User[] = [
     password: "@cailaneRun2025",
     displayName: "Cailane",
     avatarId: 5,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/cailane_deltarun"
   },
   {
     id: "6",
@@ -57,7 +62,8 @@ export const users: User[] = [
     password: "@mayaraRun2025",
     displayName: "Mayara",
     avatarId: 6,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/mayara_deltarun"
   },
   {
     id: "7",
@@ -65,7 +71,8 @@ export const users: User[] = [
     password: "@cianeRun2025",
     displayName: "Ciane",
     avatarId: 7,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/ciane_deltarun"
   },
   {
     id: "8",
@@ -73,7 +80,8 @@ export const users: User[] = [
     password: "@lucasferreiraRun2025",
     displayName: "Lucas Ferreira",
     avatarId: 8,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/lucasferreira_deltarun"
   },
   {
     id: "9",
@@ -81,7 +89,8 @@ export const users: User[] = [
     password: "@brunasantoRun2025",
     displayName: "Bruna Santo",
     avatarId: 9,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/brunasanto_deltarun"
   },
   {
     id: "10",
@@ -89,7 +98,8 @@ export const users: User[] = [
     password: "@anagodoyRun2025",
     displayName: "Ana Godoy",
     avatarId: 10,
-    themeColor: "blue"
+    themeColor: "blue",
+    personalLink: "https://bit.ly/anagodoy_deltarun"
   }
 ];
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useAuth } from "@/context/AuthContext";
 import { 
   CheckCircle2, 
   XCircle, 
@@ -12,10 +13,27 @@ import {
   FileImage,
   FileText,
   FileArchive,
-  Folder
+  Folder,
+  Copy
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/components/ui/use-toast";
 
 const BriefingSection: React.FC = () => {
+  const { user } = useAuth();
+  const { toast } = useToast();
+
+  const handleCopyLink = () => {
+    if (user?.personalLink) {
+      navigator.clipboard.writeText(user.personalLink);
+      toast({
+        title: "Link copiado!",
+        description: "Seu link personalizado foi copiado para a área de transferência.",
+        duration: 3000,
+      });
+    }
+  };
+
   return (
     <Card className="glass-card border-delta-blue-light/30 shadow-lg">
       <CardHeader>
@@ -89,6 +107,27 @@ const BriefingSection: React.FC = () => {
           </TabsContent>
           
           <TabsContent value="conteudo" className="space-y-4">
+            <div className="mb-6 p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10 border border-delta-neon/30">
+              <h3 className="text-lg font-semibold text-delta-neon mb-2">Seu Link Personalizado</h3>
+              <div className="flex items-center gap-3">
+                <code className="bg-black/30 px-3 py-2 rounded flex-1 font-mono text-delta-neon">
+                  {user?.personalLink}
+                </code>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleCopyLink}
+                  className="flex-shrink-0"
+                  title="Copiar link"
+                >
+                  <Copy className="h-4 w-4" />
+                </Button>
+              </div>
+              <p className="text-sm mt-2 text-gray-400">
+                Use este link em todas as suas postagens para rastrear suas vendas.
+              </p>
+            </div>
+
             <div className="flex items-start space-x-3">
               <MessageSquare className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
               <div>
@@ -96,7 +135,11 @@ const BriefingSection: React.FC = () => {
                 <ul className="list-disc pl-6 space-y-2 mt-2">
                   <li>Publique Stories mostrando a prévia das peças da linha Delta Run Muscle.</li>
                   <li>Use seu link personalizado, que direcionará os interessados diretamente ao WhatsApp da Delta Fitness Brazil com sua identificação.</li>
-                  <li>Inclua um call-to-action claro, como: "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas! Corre lá no meu link e garanta sua peça antes de todo mundo: [link personalizado]."</li>
+                  <li>Inclua um call-to-action claro, como: <br />
+                    <div className="mt-2 p-3 bg-black/30 rounded-lg">
+                      "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas! Corre lá no meu link e garanta sua peça antes de todo mundo: <span className="text-delta-neon">{user?.personalLink}</span>"
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
