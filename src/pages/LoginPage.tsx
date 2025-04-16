@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -35,20 +36,20 @@ const LoginPage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-dark">
       <div className="w-full max-w-md">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           <div className="flex justify-center items-center mb-4">
-            <div className="bg-delta-blue rounded-full p-3 animate-pulse-soft">
-              <Activity className="h-10 w-10 text-delta-neon" />
+            <div className="bg-delta-blue rounded-full p-2 sm:p-3 animate-pulse-soft">
+              <Activity className="h-8 w-8 sm:h-10 sm:w-10 text-delta-neon" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
             <span className="text-delta-neon">Delta</span> Run Muscle
           </h1>
-          <p className="text-gray-300">Acesse a área exclusiva de influenciadores</p>
+          <p className="text-gray-300 text-sm sm:text-base">Acesse a área exclusiva de influenciadores</p>
         </div>
         
-        <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-8 rounded-xl shadow-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="bg-white/5 backdrop-blur-lg border border-white/10 p-6 sm:p-8 rounded-xl shadow-2xl">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="space-y-2">
               <div className="flex items-center border-b border-gray-400/30 py-2">
                 <User className="h-5 w-5 text-delta-neon mr-3" />
@@ -87,7 +88,7 @@ const LoginPage: React.FC = () => {
           </form>
           
           <div className="mt-6 pt-4 border-t border-gray-700/30 text-center">
-            <p className="text-sm text-gray-400">
+            <p className="text-xs sm:text-sm text-gray-400">
               Área exclusiva para membros do Team Delta. 
               <br />
               Contate seu gerenciador para acesso.

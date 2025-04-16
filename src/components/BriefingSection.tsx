@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useAuth } from "@/context/AuthContext";
@@ -18,10 +19,21 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const BriefingSection: React.FC = () => {
   const { user } = useAuth();
   const { toast } = useToast();
+  const isMobile = useIsMobile();
+  const tabsRef = useRef<HTMLDivElement>(null);
 
   const handleCopyLink = () => {
     if (user?.personalLink) {
@@ -34,10 +46,21 @@ const BriefingSection: React.FC = () => {
     }
   };
 
+  // Lista de tabs para usar na navegação
+  const tabItems = [
+    { value: "objetivo", label: "Objetivo" },
+    { value: "linha", label: "Sobre a Linha" },
+    { value: "conteudo", label: "Conteúdo" },
+    { value: "do", label: "Do's" },
+    { value: "dont", label: "Don'ts" },
+    { value: "personalize", label: "Personalize" },
+    { value: "arquivos", label: "Arquivos" },
+  ];
+
   return (
     <Card className="glass-card border-delta-blue-light/30 shadow-lg">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">
+        <CardTitle className="text-xl sm:text-2xl font-bold">
           <span className="text-gradient-to-r from-delta-blue-light to-delta-neon">
             Campanha Pré-Venda Delta Run Muscle
           </span>
@@ -47,24 +70,31 @@ const BriefingSection: React.FC = () => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="objetivo" className="w-full">
-          <TabsList className="grid grid-cols-3 md:grid-cols-7 mb-6">
-            <TabsTrigger value="objetivo">Objetivo</TabsTrigger>
-            <TabsTrigger value="linha">Sobre a Linha</TabsTrigger>
-            <TabsTrigger value="conteudo">Conteúdo</TabsTrigger>
-            <TabsTrigger value="do">Do's</TabsTrigger>
-            <TabsTrigger value="dont">Don'ts</TabsTrigger>
-            <TabsTrigger value="personalize">Personalize</TabsTrigger>
-            <TabsTrigger value="arquivos">Arquivos</TabsTrigger>
-          </TabsList>
+        <Tabs defaultValue="objetivo" className="w-full" ref={tabsRef}>
+          <div className="relative w-full mb-6">
+            <ScrollArea className="w-full">
+              <TabsList className="inline-flex w-max min-w-full px-1">
+                {tabItems.map((tab) => (
+                  <TabsTrigger 
+                    key={tab.value} 
+                    value={tab.value}
+                    className="px-3 py-1.5 text-sm whitespace-nowrap"
+                  >
+                    {tab.label}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </ScrollArea>
+          </div>
           
+          {/* Aqui mantemos o conteúdo das tabs, mas vamos otimizá-lo para mobile */}
           <TabsContent value="objetivo" className="space-y-4">
             <div className="flex items-start space-x-3">
               <Zap className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold">Mensagem-Chave</h3>
-                <p>Aproveite os preços incrivelmente abaixo do normal, uma chance imperdível para quem sempre quis aderir ao Team Delta.</p>
-                <p className="mt-1 text-sm font-bold">Essa é a maior linha já lançada pela Delta Fitness Brazil.</p>
+                <p className="text-sm sm:text-base">Aproveite os preços incrivelmente abaixo do normal, uma chance imperdível para quem sempre quis aderir ao Team Delta.</p>
+                <p className="mt-1 text-xs sm:text-sm font-bold">Essa é a maior linha já lançada pela Delta Fitness Brazil.</p>
               </div>
             </div>
             
@@ -72,7 +102,7 @@ const BriefingSection: React.FC = () => {
               <Trophy className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold">Objetivo da Campanha</h3>
-                <p>Divulgar a pré-venda da nova linha Delta Run Muscle, destacando preços especiais e promovendo a oportunidade única de fazer parte do Team Delta.</p>
+                <p className="text-sm sm:text-base">Divulgar a pré-venda da nova linha Delta Run Muscle, destacando preços especiais e promovendo a oportunidade única de fazer parte do Team Delta.</p>
               </div>
             </div>
           </TabsContent>
@@ -82,13 +112,13 @@ const BriefingSection: React.FC = () => {
               <Info className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
               <div>
                 <h3 className="text-lg font-semibold">Propósito da Linha Delta Run Muscle</h3>
-                <p>A linha Delta Run Muscle foi criada para atender atletas e amantes de fitness que buscam peças com alta performance, conforto e estilo. Cada peça combina tecnologia inovadora, materiais premium e design moderno, garantindo durabilidade e versatilidade para treinos intensos ou uso casual.</p>
+                <p className="text-sm sm:text-base">A linha Delta Run Muscle foi criada para atender atletas e amantes de fitness que buscam peças com alta performance, conforto e estilo. Cada peça combina tecnologia inovadora, materiais premium e design moderno, garantindo durabilidade e versatilidade para treinos intensos ou uso casual.</p>
               </div>
             </div>
             
             <div className="my-4">
               <h3 className="text-lg font-semibold mb-2">Características Principais</h3>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base">
                 <li>Tecnologia de secagem rápida e respirabilidade para máxima performance.</li>
                 <li>Design ergonômico que valoriza o corpo e oferece liberdade de movimento.</li>
                 <li>Estilo versátil, perfeito para academia, corridas ou até mesmo looks casuais.</li>
@@ -97,7 +127,7 @@ const BriefingSection: React.FC = () => {
             
             <div className="my-4">
               <h3 className="text-lg font-semibold mb-2">Peças da Linha</h3>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base">
                 <li><span className="font-medium">Camisetas Performance:</span> Feitas com tecido leve e resistente, ideais para treinos intensos.</li>
                 <li><span className="font-medium">Calças e Shorts Atléticos:</span> Design ajustável e bolsos funcionais.</li>
                 <li><span className="font-medium">Tops Esportivos:</span> Com suporte reforçado para atividades de alto impacto.</li>
@@ -110,7 +140,7 @@ const BriefingSection: React.FC = () => {
             <div className="mb-6 p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10 border border-delta-neon/30">
               <h3 className="text-lg font-semibold text-delta-neon mb-2">Seu Link Personalizado</h3>
               <div className="flex items-center gap-3">
-                <code className="bg-black/30 px-3 py-2 rounded flex-1 font-mono text-delta-neon">
+                <code className="bg-black/30 px-3 py-2 rounded flex-1 font-mono text-delta-neon text-xs sm:text-sm overflow-x-auto whitespace-nowrap">
                   {user?.personalLink}
                 </code>
                 <Button
@@ -123,7 +153,7 @@ const BriefingSection: React.FC = () => {
                   <Copy className="h-4 w-4" />
                 </Button>
               </div>
-              <p className="text-sm mt-2 text-gray-400">
+              <p className="text-xs sm:text-sm mt-2 text-gray-400">
                 Use este link em todas as suas postagens para rastrear suas vendas.
               </p>
             </div>
@@ -187,8 +217,8 @@ const BriefingSection: React.FC = () => {
                 <div key={index} className="flex items-start space-x-3">
                   <CheckCircle2 className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="font-medium">{item.title}</p>
-                    <p className="text-sm">{item.desc}</p>
+                    <p className="font-medium text-sm sm:text-base">{item.title}</p>
+                    <p className="text-xs sm:text-sm">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -285,101 +315,175 @@ const BriefingSection: React.FC = () => {
           
           <TabsContent value="arquivos" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="p-4 hover:bg-white/5 transition-colors">
-                <div className="flex items-start space-x-3">
-                  <FileImage className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Imagens das Peças</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Lookbook Delta Run Muscle</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Fotos Lifestyle</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Fotos Detalhes Técnicos</a>
-                      </li>
-                    </ul>
+              {/* Convertendo em um carousel para visualização mobile melhorada */}
+              {isMobile ? (
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {[
+                      {
+                        icon: FileImage,
+                        title: "Imagens das Peças",
+                        links: [
+                          { href: "#", text: "Lookbook Delta Run Muscle" },
+                          { href: "#", text: "Fotos Lifestyle" },
+                          { href: "#", text: "Fotos Detalhes Técnicos" }
+                        ]
+                      },
+                      {
+                        icon: FileText,
+                        title: "Informações Técnicas",
+                        links: [
+                          { href: "#", text: "Catálogo Completo" },
+                          { href: "#", text: "Especificações dos Tecidos" },
+                          { href: "#", text: "Guia de Medidas" }
+                        ]
+                      },
+                      {
+                        icon: Folder,
+                        title: "Materiais de Apoio",
+                        links: [
+                          { href: "#", text: "Sugestões de Legendas" },
+                          { href: "#", text: "Templates Stories" },
+                          { href: "#", text: "Músicas Sugeridas" }
+                        ]
+                      },
+                      {
+                        icon: FileArchive,
+                        title: "Arquivos de Suporte",
+                        links: [
+                          { href: "#", text: "Kit de Mídia Completo" },
+                          { href: "#", text: "Vídeos de Apoio" },
+                          { href: "#", text: "Briefing em PDF" }
+                        ]
+                      }
+                    ].map((item, idx) => (
+                      <CarouselItem key={idx}>
+                        <Card className="p-4 hover:bg-white/5 transition-colors h-full">
+                          <div className="flex items-start space-x-3">
+                            <item.icon className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                            <div>
+                              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                              <ul className="space-y-2">
+                                {item.links.map((link, linkIdx) => (
+                                  <li key={linkIdx} className="flex items-center space-x-2">
+                                    <Link className="h-4 w-4" />
+                                    <a href={link.href} className="text-delta-neon hover:underline text-sm">
+                                      {link.text}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <div className="flex justify-center gap-2 mt-4">
+                    <CarouselPrevious className="static translate-y-0 left-0" />
+                    <CarouselNext className="static translate-y-0 right-0" />
                   </div>
-                </div>
-              </Card>
+                </Carousel>
+              ) : (
+                /* ... keep existing code (desktop grid layout for file sections) */
+                <>
+                  <Card className="p-4 hover:bg-white/5 transition-colors">
+                    <div className="flex items-start space-x-3">
+                      <FileImage className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Imagens das Peças</h3>
+                        <ul className="space-y-2">
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Lookbook Delta Run Muscle</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Fotos Lifestyle</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Fotos Detalhes Técnicos</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </Card>
 
-              <Card className="p-4 hover:bg-white/5 transition-colors">
-                <div className="flex items-start space-x-3">
-                  <FileText className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Informações Técnicas</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Catálogo Completo</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Especificações dos Tecidos</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Guia de Medidas</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Card>
+                  <Card className="p-4 hover:bg-white/5 transition-colors">
+                    <div className="flex items-start space-x-3">
+                      <FileText className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Informações Técnicas</h3>
+                        <ul className="space-y-2">
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Catálogo Completo</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Especificações dos Tecidos</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Guia de Medidas</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </Card>
 
-              <Card className="p-4 hover:bg-white/5 transition-colors">
-                <div className="flex items-start space-x-3">
-                  <Folder className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Materiais de Apoio</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Sugestões de Legendas</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Templates Stories</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Músicas Sugeridas</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Card>
+                  <Card className="p-4 hover:bg-white/5 transition-colors">
+                    <div className="flex items-start space-x-3">
+                      <Folder className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Materiais de Apoio</h3>
+                        <ul className="space-y-2">
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Sugestões de Legendas</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Templates Stories</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Músicas Sugeridas</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </Card>
 
-              <Card className="p-4 hover:bg-white/5 transition-colors">
-                <div className="flex items-start space-x-3">
-                  <FileArchive className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Arquivos de Suporte</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Kit de Mídia Completo</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Vídeos de Apoio</a>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <Link className="h-4 w-4" />
-                        <a href="#" className="text-delta-neon hover:underline">Briefing em PDF</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </Card>
+                  <Card className="p-4 hover:bg-white/5 transition-colors">
+                    <div className="flex items-start space-x-3">
+                      <FileArchive className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">Arquivos de Suporte</h3>
+                        <ul className="space-y-2">
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Kit de Mídia Completo</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Vídeos de Apoio</a>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <Link className="h-4 w-4" />
+                            <a href="#" className="text-delta-neon hover:underline">Briefing em PDF</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </Card>
+                </>
+              )}
             </div>
 
             <div className="mt-6 p-4 rounded-lg border border-delta-neon/30">
-              <p className="text-center text-sm">
+              <p className="text-center text-xs sm:text-sm">
                 Todos os arquivos são de uso exclusivo para influenciadores do Team Delta.
                 Não compartilhe estes materiais com terceiros.
               </p>

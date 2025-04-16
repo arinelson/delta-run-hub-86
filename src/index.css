@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,6 +45,24 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+  }
+  
+  /* Otimização para desempenho de renderização e rolagem suave */
+  @supports (content-visibility: auto) {
+    .content-visibility-auto {
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 1000px;
+    }
+  }
+
+  /* Otimizações para mobile */
+  @media (max-width: 768px) {
+    input, textarea, select, button {
+      font-size: 16px; /* Previne zoom automático em inputs no iOS */
+    }
   }
 }
 
@@ -55,6 +74,7 @@
 .text-emphasis {
   @apply font-bold;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  will-change: transform;
 }
 
 .light .text-emphasis {
@@ -77,4 +97,34 @@
 
 .animate-glow {
   animation: glow 2s infinite;
+  will-change: box-shadow;
+}
+
+/* Fix para rolagem horizontal em mobile */
+.scroll-x-container {
+  @apply overflow-x-auto overscroll-x-contain pb-3 -mb-3;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-x-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Opera */
+}
+
+.scroll-x-item {
+  scroll-snap-align: start;
+}
+
+/* Utilitários para performance mobile */
+.hardware-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Transições otimizadas */
+.optimized-transition {
+  transition-property: transform, opacity;
+  will-change: transform, opacity;
 }
