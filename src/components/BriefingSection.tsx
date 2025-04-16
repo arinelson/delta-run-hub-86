@@ -1,0 +1,236 @@
+
+import React from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { CheckCircle2, XCircle, Link, Zap, Info, Trophy, MessageSquare } from "lucide-react";
+
+const BriefingSection: React.FC = () => {
+  return (
+    <Card className="glass-card border-delta-blue-light/30 shadow-lg">
+      <CardHeader>
+        <CardTitle className="text-2xl font-bold">
+          <span className="text-gradient-to-r from-delta-blue-light to-delta-neon">
+            Campanha Pré-Venda Delta Run Muscle
+          </span>
+        </CardTitle>
+        <CardDescription>
+          Promova a linha Delta Run Muscle e destaque os preços especiais exclusivos
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Tabs defaultValue="objetivo" className="w-full">
+          <TabsList className="grid grid-cols-3 md:grid-cols-6 mb-6">
+            <TabsTrigger value="objetivo">Objetivo</TabsTrigger>
+            <TabsTrigger value="linha">Sobre a Linha</TabsTrigger>
+            <TabsTrigger value="conteudo">Conteúdo</TabsTrigger>
+            <TabsTrigger value="do">Do's</TabsTrigger>
+            <TabsTrigger value="dont">Don'ts</TabsTrigger>
+            <TabsTrigger value="personalize">Personalize</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="objetivo" className="space-y-4">
+            <div className="flex items-start space-x-3">
+              <Zap className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold">Mensagem-Chave</h3>
+                <p>Aproveite os preços incrivelmente abaixo do normal, uma chance imperdível para quem sempre quis aderir ao Team Delta.</p>
+                <p className="mt-1 text-sm font-bold">Essa é a maior linha já lançada pela Delta Fitness Brazil.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <Trophy className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold">Objetivo da Campanha</h3>
+                <p>Divulgar a pré-venda da nova linha Delta Run Muscle, destacando preços especiais e promovendo a oportunidade única de fazer parte do Team Delta.</p>
+              </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="linha" className="space-y-4">
+            <div className="flex items-start space-x-3">
+              <Info className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold">Propósito da Linha Delta Run Muscle</h3>
+                <p>A linha Delta Run Muscle foi criada para atender atletas e amantes de fitness que buscam peças com alta performance, conforto e estilo. Cada peça combina tecnologia inovadora, materiais premium e design moderno, garantindo durabilidade e versatilidade para treinos intensos ou uso casual.</p>
+              </div>
+            </div>
+            
+            <div className="my-4">
+              <h3 className="text-lg font-semibold mb-2">Características Principais</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Tecnologia de secagem rápida e respirabilidade para máxima performance.</li>
+                <li>Design ergonômico que valoriza o corpo e oferece liberdade de movimento.</li>
+                <li>Estilo versátil, perfeito para academia, corridas ou até mesmo looks casuais.</li>
+              </ul>
+            </div>
+            
+            <div className="my-4">
+              <h3 className="text-lg font-semibold mb-2">Peças da Linha</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><span className="font-medium">Camisetas Performance:</span> Feitas com tecido leve e resistente, ideais para treinos intensos.</li>
+                <li><span className="font-medium">Calças e Shorts Atléticos:</span> Design ajustável e bolsos funcionais.</li>
+                <li><span className="font-medium">Tops Esportivos:</span> Com suporte reforçado para atividades de alto impacto.</li>
+                <li><span className="font-medium">Jaquetas e Casacos:</span> Perfeitos para dias frios, com proteção contra vento e umidade.</li>
+              </ul>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="conteudo" className="space-y-4">
+            <div className="flex items-start space-x-3">
+              <MessageSquare className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold">Foco Principal: Stories</h3>
+                <ul className="list-disc pl-6 space-y-2 mt-2">
+                  <li>Publique Stories mostrando a prévia das peças da linha Delta Run Muscle.</li>
+                  <li>Use seu link personalizado, que direcionará os interessados diretamente ao WhatsApp da Delta Fitness Brazil com sua identificação.</li>
+                  <li>Inclua um call-to-action claro, como: "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas! Corre lá no meu link e garanta sua peça antes de todo mundo: [link personalizado]."</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="flex items-start space-x-3">
+              <Zap className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-lg font-semibold">BÔNUS: Reels (Opcional)</h3>
+                <p>Se quiser se destacar ainda mais, crie um Reel criativo mostrando as peças em ação (ex.: durante um treino, em um dia casual, etc.).</p>
+                <p className="mt-2">Exemplo de ideias criativas:</p>
+                <ul className="list-disc pl-6 space-y-1 mt-1">
+                  <li>"Quem vai garantir a peça antes de mim?"</li>
+                  <li>Desafios ou teasers mostrando como as peças combinam com diferentes estilos de vida.</li>
+                </ul>
+              </div>
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="do" className="space-y-3">
+            <h3 className="text-lg font-semibold text-center mb-2">O QUE FAZER (OBRIGATÓRIO)</h3>
+            
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Use seu link personalizado",
+                  desc: "Sempre inclua seu link exclusivo nas postagens para rastrear suas vendas e garantir sua comissão/parceria."
+                },
+                {
+                  title: "Mostre imagens ou vídeos das peças",
+                  desc: "Publique fotos/vídeos de alta qualidade das peças da linha Delta Run Muscle."
+                },
+                {
+                  title: "Fale sobre a pré-venda",
+                  desc: "Deixe claro que os produtos estão em fase de pré-venda e que os preços estão abaixo do normal."
+                },
+                {
+                  title: "Inclua um call-to-action claro",
+                  desc: "Exemplo: \"Corre lá no meu link e garanta já sua peça!\""
+                },
+                {
+                  title: "Engaje visualmente",
+                  desc: "Crie conteúdos criativos que mostrem as peças em uso ou em destaque, incentivando o desejo de compra."
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle2 className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">{item.title}</p>
+                    <p className="text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="dont" className="space-y-3">
+            <h3 className="text-lg font-semibold text-center mb-2">O QUE NÃO FAZER</h3>
+            
+            <div className="space-y-4">
+              {[
+                {
+                  title: "Não esqueça o link personalizado",
+                  desc: "Publicações sem o link não serão contabilizadas e podem prejudicar sua performance na campanha."
+                },
+                {
+                  title: "Não divulgue preços específicos",
+                  desc: "Evite mencionar valores exatos dos produtos. Apenas reforce que estão \"muito abaixo do normal\" ou \"imperdíveis\"."
+                },
+                {
+                  title: "Não promova links externos",
+                  desc: "Não redirecione os seguidores para outros sites ou lojas que não sejam o WhatsApp oficial da Delta Fitness Brazil."
+                },
+                {
+                  title: "Não use linguagem negativa",
+                  desc: "Evite frases como \"última chance\" ou \"vai acabar logo\" sem autorização prévia, para não gerar pressão excessiva."
+                },
+                {
+                  title: "Não altere o foco da campanha",
+                  desc: "Mantenha o foco na pré-venda da linha Delta Run Muscle. Não misture outras promoções ou marcas no mesmo conteúdo."
+                }
+              ].map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <XCircle className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium">{item.title}</p>
+                    <p className="text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="personalize">
+            <h3 className="text-lg font-semibold text-center mb-4">O QUE VOCÊ PODE AJUSTAR OU PERSONALIZAR</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10">
+                <h4 className="font-medium text-delta-neon mb-2">Estilo do conteúdo</h4>
+                <p className="text-sm">O tom e o formato (vídeo, foto, carrossel, stories, etc.) podem ser adaptados ao seu estilo pessoal e à preferência do seu público.</p>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10">
+                <h4 className="font-medium text-delta-neon mb-2">Horário de postagem</h4>
+                <p className="text-sm">Escolha o melhor horário para engajamento com base no comportamento do seu público.</p>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10">
+                <h4 className="font-medium text-delta-neon mb-2">Exemplos de frases</h4>
+                <p className="text-sm">Personalize as legendas ou scripts dos vídeos, desde que mantenham a mensagem-chave da campanha.</p>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-gradient-to-br from-delta-blue/20 to-delta-neon/10">
+                <h4 className="font-medium text-delta-neon mb-2">Ideias criativas (Reels)</h4>
+                <p className="text-sm">Sinta-se à vontade para criar desafios, teasers ou dinâmicas próprias para engajar ainda mais seus seguidores.</p>
+              </div>
+            </div>
+            
+            <div className="mt-6 p-4 rounded-lg border border-delta-neon/30">
+              <p className="text-center font-medium mb-2">Lembre-se:</p>
+              <p className="text-center">Essa campanha é uma parceria! Quanto mais você se dedicar a seguir essas diretrizes e usar sua criatividade dentro delas, maior será o impacto e o sucesso da pré-venda. 💪</p>
+            </div>
+            
+            <div className="flex justify-center mt-6">
+              <div className="flex items-center space-x-6">
+                <div className="text-center">
+                  <p className="text-sm font-medium mb-1">E-mail para dúvidas:</p>
+                  <a href="mailto:contato@deltafitness.com" className="text-delta-neon hover:underline text-sm flex items-center">
+                    <Link className="h-3 w-3 mr-1" />
+                    contato@deltafitness.com
+                  </a>
+                </div>
+                
+                <div className="text-center">
+                  <p className="text-sm font-medium mb-1">WhatsApp:</p>
+                  <a href="https://wa.me/5500000000000" className="text-delta-neon hover:underline text-sm flex items-center">
+                    <Link className="h-3 w-3 mr-1" />
+                    (00) 00000-0000
+                  </a>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default BriefingSection;

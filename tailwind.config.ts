@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				delta: {
+					blue: '#1E40AF',
+					'blue-light': '#3B82F6',
+					'blue-dark': '#1E3A8A',
+					neon: '#00F5FF',
+					'neon-light': '#7DF9FF',
+					'neon-pink': '#FF00FF',
+					'neon-purple': '#8B5CF6',
+					'neon-green': '#4ADE80',
+					black: '#0F172A',
+					'gray-dark': '#1E293B',
+					'gray-light': '#94A3B8'
 				}
 			},
 			borderRadius: {
@@ -84,11 +98,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(0, 245, 255, 0.5), 0 0 10px rgba(0, 245, 255, 0.3)' },
+					'50%': { boxShadow: '0 0 15px rgba(0, 245, 255, 0.8), 0 0 20px rgba(0, 245, 255, 0.5)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-soft': 'pulse-soft 2s infinite',
+				'glow': 'glow 3s infinite',
+				'float': 'float 6s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-neon': 'linear-gradient(90deg, #3B82F6, #00F5FF)',
+				'gradient-dark': 'linear-gradient(to bottom, #1E293B, #0F172A)',
+				'gradient-card': 'linear-gradient(135deg, rgba(30, 58, 138, 0.5), rgba(0, 245, 255, 0.2))'
 			}
 		}
 	},
