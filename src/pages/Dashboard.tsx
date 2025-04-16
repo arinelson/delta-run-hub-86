@@ -61,7 +61,6 @@ const Dashboard: React.FC = () => {
           </div>
           
           <div className="flex items-center space-x-3">
-            <ThemeToggle />
             <ProfileSettings user={user} onUpdate={updateUserPreferences} />
             <Button
               variant="ghost"
