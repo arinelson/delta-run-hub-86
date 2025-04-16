@@ -26,10 +26,10 @@ const AboutLineTab: React.FC = () => {
       <div className="my-4">
         <h3 className="text-lg font-semibold mb-2">Peças da Linha</h3>
         <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base">
-          <li><span className="font-medium">Camisetas Performance:</span> Feitas com tecido leve e resistente, ideais para treinos intensos.</li>
-          <li><span className="font-medium">Calças e Shorts Atléticos:</span> Design ajustável e bolsos funcionais.</li>
-          <li><span className="font-medium">Tops Esportivos:</span> Com suporte reforçado para atividades de alto impacto.</li>
-          <li><span className="font-medium">Jaquetas e Casacos:</span> Perfeitos para dias frios, com proteção contra vento e umidade.</li>
+          <li><span className="font-medium">Camisetas de Compressão:</span> Feitas com tecido leve e resistente, ideais para treinos intensos.</li>
+          <li><span className="font-medium">Tops e Shorts:</span> Design ajustável e funcionais.</li>
+          <li><span className="font-medium">Camisa Normal:</span> Com suporte reforçado para atividades de alto impacto.</li>
+          <li><span className="font-medium">Regata:</span> Perfeitos para dias quentes, com uma maior flexibilidade.</li>
         </ul>
       </div>
     </TabsContent>
