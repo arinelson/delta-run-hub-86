@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { useAuth } from "@/context/AuthContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useNavigate } from "react-router-dom";
-import { Lock, User, RunningIcon } from "lucide-react";
+import { Lock, User, Activity } from "lucide-react";
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
         <div className="text-center mb-8">
           <div className="flex justify-center items-center mb-4">
             <div className="bg-delta-blue rounded-full p-3 animate-pulse-soft">
-              <RunningIcon className="h-10 w-10 text-delta-neon" />
+              <Activity className="h-10 w-10 text-delta-neon" />
             </div>
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">

@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import ProfileSettings from "@/components/ProfileSettings";
 import FitnessQuote from "@/components/FitnessQuote";
 import BriefingSection from "@/components/BriefingSection";
-import { LogOut, RunningIcon } from "lucide-react";
+import { LogOut, Activity } from "lucide-react";
 import { themeColors } from "@/lib/auth";
 
 const Dashboard: React.FC = () => {
@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
             <div className="bg-delta-blue rounded-full p-1.5 mr-3">
-              <RunningIcon className="h-5 w-5 text-delta-neon" />
+              <Activity className="h-5 w-5 text-delta-neon" />
             </div>
             <h1 className="text-xl font-bold">Delta Run Hub</h1>
           </div>
