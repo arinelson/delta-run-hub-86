@@ -5,6 +5,8 @@ import { Moon } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 export const ThemeToggle: React.FC = () => {
+  const { theme } = useTheme();
+  
   return (
     <Button
       variant="outline"
@@ -18,3 +20,5 @@ export const ThemeToggle: React.FC = () => {
     </Button>
   );
 };
+
+export default ThemeToggle;
