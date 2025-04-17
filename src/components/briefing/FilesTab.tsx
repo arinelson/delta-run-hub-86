@@ -18,7 +18,7 @@ import {
 interface FileSection {
   icon: React.ElementType;
   title: string;
-  links: { href: string; text: string }[];
+  links: { href: string; text: string; target?: string }[];
 }
 
 const FilesTab: React.FC = () => {
