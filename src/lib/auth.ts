@@ -100,7 +100,7 @@ export const users: User[] = [
     displayName: "Ana Godoy",
     avatarId: 15, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/anagodoy_deltarun"
+    personalLink: "https://tinyurl.com/GODOY10RunMuscle"
   }
 ];
 
