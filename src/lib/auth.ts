@@ -37,7 +37,7 @@ export const users: User[] = [
     displayName: "Gabrielle",
     avatarId: 11, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/gabrielle_deltarun"
+    personalLink: "https://tinyurl.com/GABS10RunMuscle"
   },
   {
     id: "4",
