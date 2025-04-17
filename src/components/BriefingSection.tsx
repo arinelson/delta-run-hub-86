@@ -13,6 +13,7 @@ import DosTab from "@/components/briefing/DosTab";
 import DontsTab from "@/components/briefing/DontsTab";
 import PersonalizeTab from "@/components/briefing/PersonalizeTab";
 import FilesTab from "@/components/briefing/FilesTab";
+import FaqTab from "@/components/briefing/FaqTab";
 
 const BriefingSection: React.FC = () => {
   const { user } = useAuth();
@@ -27,6 +28,7 @@ const BriefingSection: React.FC = () => {
     { value: "dont", label: "Don'ts" },
     { value: "personalize", label: "Personalize" },
     { value: "arquivos", label: "Arquivos" },
+    { value: "faq", label: "FAQ" },
   ];
 
   return (
@@ -53,6 +55,7 @@ const BriefingSection: React.FC = () => {
           <DontsTab />
           <PersonalizeTab />
           <FilesTab />
+          <FaqTab />
         </Tabs>
       </CardContent>
     </Card>
