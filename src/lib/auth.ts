@@ -64,7 +64,7 @@ export const users: User[] = [
     displayName: "Mayara",
     avatarId: 16, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/mayara_deltarun"
+    personalLink: "https://tinyurl.com/MAYARA10RunMuscle"
   },
   {
     id: "7",
