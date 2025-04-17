@@ -19,7 +19,7 @@ export const users: User[] = [
     displayName: "John Alves",
     avatarId: 1,
     themeColor: "blue",
-    personalLink: "https://bit.ly/johnalves_deltarun"
+    personalLink: "https://tinyurl.com/JOHN10RunMuscle"
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ export const users: User[] = [
     displayName: "Gabriel",
     avatarId: 2,
     themeColor: "blue",
-    personalLink: "https://bit.ly/gabriel_deltarun"
+    personalLink: "https://tinyurl.com/GABRIEL10RunMuscle"
   },
   {
     id: "3",
@@ -46,7 +46,7 @@ export const users: User[] = [
     displayName: "Moana",
     avatarId: 12, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/moana_deltarun"
+    personalLink: "https://tinyurl.com/MOANA10RunMuscle"
   },
   {
     id: "5",
@@ -55,7 +55,7 @@ export const users: User[] = [
     displayName: "Cailane",
     avatarId: 14, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/cailane_deltarun"
+    personalLink: "https://tinyurl.com/CAILANE10RunMuscle"
   },
   {
     id: "6",
@@ -73,7 +73,7 @@ export const users: User[] = [
     displayName: "Ciane",
     avatarId: 3,
     themeColor: "blue",
-    personalLink: "https://bit.ly/ciane_deltarun"
+    personalLink: "https://tinyurl.com/CIANE10RunMuscle"
   },
   {
     id: "8",
@@ -82,7 +82,7 @@ export const users: User[] = [
     displayName: "Lucas Ferreira",
     avatarId: 7,
     themeColor: "blue",
-    personalLink: "https://bit.ly/lucasferreira_deltarun"
+    personalLink: "https://tinyurl.com/LUCAS10RunMuscle"
   },
   {
     id: "9",
@@ -91,7 +91,7 @@ export const users: User[] = [
     displayName: "Bruna Santo",
     avatarId: 13, // Female fitness avatar
     themeColor: "blue",
-    personalLink: "https://bit.ly/brunasanto_deltarun"
+    personalLink: "https://tinyurl.com/BRUNA10RunMuscle"
   },
   {
     id: "10",
