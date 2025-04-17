@@ -65,7 +65,7 @@ const FaqTab: React.FC = () => {
       <div className="mt-6 flex flex-col items-center">
         <p className="text-center text-sm mb-4">Não encontrou resposta para sua dúvida?</p>
         <a 
-          href="https://wa.me/5500000000000?text=Olá!%20Sou%20influencer%20do%20Team%20Delta%20e%20tenho%20uma%20dúvida%20sobre%20a%20campanha." 
+          href="https://wa.me/558293460460?text=Queria%20tirar%20d%C3%BAvidas%20sobre%20o%20https%3A%2F%2Fdeltarunmuscle.netlify.app%2F%20%20%F0%9F%92%AA%F0%9F%96%A4." 
           target="_blank" 
           rel="noopener noreferrer" 
           className="w-full sm:w-auto"
