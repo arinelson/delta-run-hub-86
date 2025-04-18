@@ -55,7 +55,7 @@ const FilesTab: React.FC = () => {
       links: [
         { href: "#", text: "Kit de Mídia Completo" },
         { href: "#", text: "Vídeos de Apoio" },
-        { href: "#", text: "Briefing em PDF" }
+        { href: "https://docs.google.com/document/d/143-yMwNpq41vhiNq9g4ZFUyCKRyUZ12J-4rA2xvDUlc/edit?usp=sharing", text: "Briefing em PDF", target: "_blank" }
       ]
     }
   ];
