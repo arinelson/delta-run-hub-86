@@ -10,23 +10,23 @@ const FaqTab: React.FC = () => {
   const faqItems = [
     {
       question: "Como faço para acessar o material completo da campanha?",
-      answer: "Todo o material está disponível na seção 'Arquivos' do dashboard. Caso tenha problemas para acessar algum arquivo específico, entre em contato conosco pelo WhatsApp."
+      answer: "Todo o material está disponível na seção 'Arquivos' do dashboard ou você pode baixar ele de forma completa em 'Arquivos de Suporte' na seção de Arquivos. Recomendamos que baixe ele no seu dispositivo. Caso tenha problemas para acessar algum arquivo específico, entre em contato conosco pelo WhatsApp."
     },
     {
       question: "Até quando posso divulgar a pré-venda?",
-      answer: "A fase de pré-venda vai até o dia 30 do mês corrente. Após esta data, os preços voltarão ao normal e todas as peças estarão disponíveis na loja online oficial."
+      answer: "A fase de pré-venda vai até o dia 28 do mês de Abril. Após esta data, os preços voltarão ao normal e todas as peças estarão disponíveis na loja online oficial após as peças chegarem. Contudo, mesmo sem a pré-venda da Linha Run você pode continuar divulgando seu link para necessidades de compra na Delta Fitness"
     },
-    {
+    /*{
       question: "Como recebo minha comissão pelas vendas?",
       answer: "As comissões são calculadas com base nas vendas realizadas através do seu link personalizado. Os pagamentos são processados todo dia 10 do mês seguinte às vendas."
-    },
+    },*/
     {
       question: "Posso usar minhas próprias fotos das peças?",
-      answer: "Sim! Incentivamos que você mostre as peças da forma mais autêntica possível. Se você já recebeu alguma peça da coleção, pode criar conteúdos originais seguindo as diretrizes de marca no briefing."
+      answer: "Mesmo que você esteja divulgando a pré-venda da Linha Run, isto é, peças que não estão no estoque disponível mas com oportunidade exclusiva de adquirí-las antes de todo mundo, é recomendável que você esteja usando qualquer peça da Delta Fitness Brazil quando você estiver aparecendo nos stories."
     },
     {
       question: "O que acontece se alguém comprar pelo meu link mas não mencionar meu nome?",
-      answer: "Não se preocupe! O sistema rastreia automaticamente todas as vendas feitas através do seu link personalizado, independentemente de mencionarem seu nome ou não."
+      answer: "Não se preocupe! O sistema rastreia automaticamente todas as vendas feitas através do seu link personalizado, porque ele foi feito configurado previamente com o seu nome."
     },
     {
       question: "Por quanto tempo devo manter os Stories no ar?",
@@ -45,8 +45,8 @@ const FaqTab: React.FC = () => {
       answer: "Não recomendamos a divulgação simultânea de outras marcas de vestuário fitness no mesmo conteúdo da campanha Delta Run Muscle para evitar confusão entre os seus seguidores."
     },
     {
-      question: "Como posso verificar o status das minhas vendas?",
-      answer: "Em breve disponibilizaremos um painel de performance onde você poderá acompanhar em tempo real todas as suas vendas e comissões. Por enquanto, enviaremos relatórios semanais por e-mail."
+      question: "Posso levar para o site?",
+      answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha."
     }
   ];
 
