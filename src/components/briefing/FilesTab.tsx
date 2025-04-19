@@ -26,7 +26,7 @@ const FilesTab: React.FC = () => {
       icon: FileImage,
       title: "Mídias das Peças",
       links: [
-        { href: "https://drive.google.com/drive/folders/1c8fWWB4bxmD4Rw0t4kwYChRcXMUY8Oag?usp=sharing", text: "Mídias das Peças da Pré-Venda", target: "_blank" },
+        { href: "https://drive.google.com/drive/folders/1c8fWWB4bxmD4Rw0t4kwYChRcXMUY8Oag?usp=sharing", text: "Imagens/Vídeos das Peças da Pré-Venda", target: "_blank" },
         { href: "https://drive.google.com/drive/folders/1O7JdwDqjiV5GQwI1QUKpkAoRnlX9-Dxe?usp=sharing", text: "Criativos das Peças da Pré-Venda", target: "_blank" }
        /* { href: "#", text: "Fotos Detalhes Técnicos" }*/
       ]
@@ -40,7 +40,7 @@ const FilesTab: React.FC = () => {
        /* { href: "#", text: "Guia de Medidas" }*/
       ]
     },
-    {
+   /* {
       icon: Folder,
       title: "Materiais de Apoio",
       links: [
@@ -48,13 +48,13 @@ const FilesTab: React.FC = () => {
         { href: "#", text: "Templates Stories" },
         { href: "#", text: "Músicas Sugeridas" }
       ]
-    },
+    },*/
     {
       icon: FileArchive,
       title: "Arquivos de Suporte",
       links: [
-        { href: "#", text: "Kit de Mídia Completo" },
-        { href: "#", text: "Vídeos de Apoio" },
+     /*   { href: "#", text: "Kit de Mídia Completo" },
+        { href: "#", text: "Vídeos de Apoio" },*/
         { href: "https://docs.google.com/document/d/143-yMwNpq41vhiNq9g4ZFUyCKRyUZ12J-4rA2xvDUlc/edit?usp=sharing", text: "Briefing em PDF", target: "_blank" }
       ]
     }
