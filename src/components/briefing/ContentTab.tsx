@@ -57,7 +57,7 @@ const ContentTab: React.FC = () => {
              Inclua um último call-to-action no final do stories incluindo o seu link personalizado, como:
               <div className="mt-2 p-3 bg-black/30 rounded-lg overflow-hidden">
                 <p className="break-words">
-                  "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas para a pré-venda da Linha Run! Corre lá no meu link comenta este stories e garanta sua peça antes de todo mundo: 
+                  "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas para a pré-venda da Linha Run! Corre lá no meu link (ou comenta este stories) e garanta sua peça antes de todo mundo: 
                   <span className="text-delta-neon block mt-1 overflow-x-auto pb-1">
                     {user?.personalLink}
 
