@@ -75,7 +75,7 @@ const FaqTab: React.FC = () => {
           <a href="https://whatsgeneratorlink.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
             (clique aqui). 
           </a>
-          E dentro desse gerador você insiraria o número 558293460460 e criaria uma mensagem personalizada informando seu CUPOM (como mostra na imagem abaixo). E logo em seguida você geraria e copiaria o link abaixo e usaria de volta na sua campanha (dica bônus: ao gerar esse link você poderia usar um encurtador de links como bitly para simplificar mais). E na pior das hipóteses, você entraria em contato com o suporte no WhatsApp.
+           E dentro desse gerador você insiraria o número 558293460460 e criaria uma mensagem personalizada informando seu CUPOM (como mostra na imagem abaixo). E logo em seguida você geraria e copiaria o link abaixo e usaria de volta na sua campanha (dica bônus: ao gerar esse link você poderia usar um encurtador de links como bitly para simplificar mais). E na pior das hipóteses, você entraria em contato com o suporte no WhatsApp.
           {/* Inserindo a imagem */}
       <div className="mt-4 flex justify-center">
         <img 
