@@ -57,14 +57,14 @@ const FaqTab: React.FC = () => {
       answer: (
         <>
           Caso seja uma decisão rápida, você pode usar um gerador de mensagem personalizada para o WhatsApp {' '}
-          <a href="https://arinelson.space/links" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+          <a href="https://whatsgeneratorlink.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
             (clique aqui). 
           </a>
           E dentro desse gerador você insiraria o número 558293460460 e criaria uma mensagem personalizada informando seu CUPOM (como mostra na imagem abaixo).
           {/* Inserindo a imagem */}
       <div className="mt-4 flex justify-center">
         <img 
-          src="/preview.png" 
+          src="/ariwhats.gif" 
           alt="Exemplo de como criar mensagem personalizada" 
           className="max-w-full h-auto rounded-lg border border-delta-neon/20 shadow-md"
         />
