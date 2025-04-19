@@ -6,24 +6,20 @@ import { CheckCircle2 } from "lucide-react";
 const DosTab: React.FC = () => {
   const dosItems = [
     {
-      title: "Use seu link personalizado",
+      title: "Use seu link personalizado.",
       desc: "Sempre inclua seu link exclusivo nas postagens para rastrear suas vendas e garantir sua comissão/parceria."
     },
     {
-      title: "Mostre imagens ou vídeos das peças",
-      desc: "Publique fotos/vídeos de alta qualidade das peças da linha Delta Run Muscle."
+      title: "Mostre imagens ou vídeos de alta qualidade",
+      desc: "Publique fotos/vídeos de alta qualidade para divulgar a informação da pré-venda da linha Delta Run Muscle."
     },
     {
       title: "Fale sobre a pré-venda",
-      desc: "Deixe claro que os produtos estão em fase de pré-venda e que os preços estão abaixo do normal."
-    },
-    {
-      title: "Inclua um call-to-action claro",
-      desc: "Exemplo: \"Corre lá no meu link e garanta já sua peça!\""
+      desc: "Informe e deixe claro que é uma pré-venda, o que significa que as peças não estão com vocês no momento, mas é uma condição exclusiva de antecipação."
     },
     {
       title: "Engaje visualmente",
-      desc: "Crie conteúdos criativos que mostrem as peças em uso ou em destaque, incentivando o desejo de compra."
+      desc: "Crie conteúdos criativos que façam desejar as peças da Delta Fitness pelo histórico de experiência de peças anteriores."
     }
   ];
 
