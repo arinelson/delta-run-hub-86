@@ -121,7 +121,7 @@ export const authenticateUser = (username: string, password: string): User | nul
 
 // Available theme colors
 export const themeColors = [
-  { id: "white", name: "Delta Blue", value: "#FFFFFF" },
+  { id: "yellow", name: "Delta Yellow", value: "#ffff00" },
   { id: "neon", name: "Neon Aqua", value: "#00F5FF" },
   { id: "purple", name: "Neon Purple", value: "#8B5CF6" },
   { id: "pink", name: "Neon Pink", value: "#FF00FF" },
