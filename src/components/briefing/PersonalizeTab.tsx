@@ -11,7 +11,7 @@ const PersonalizeTab: React.FC = () => {
     },
     {
       title: "Horário de postagem",
-      desc: "Escolha o melhor horário para engajamento com base no comportamento do seu público, dentro do período da campanha que é (21/04 - 28/04)"
+      desc: "Escolha o melhor horário para engajamento com base no comportamento do seu público, dentro do período da campanha que é (21/04 - 28/04). Após você organizar esses detalhes da campanha e divulgar no seu perfil, avise antecipadamente qual dia ou quais dias você irá postar/divulgar no seu perfil para que a Delta Fitness Brazil esteja ciente previamente."
     },
     {
       title: "Exemplos de frases",
