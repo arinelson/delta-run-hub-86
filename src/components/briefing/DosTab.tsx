@@ -20,6 +20,10 @@ const DosTab: React.FC = () => {
     {
       title: "Engaje visualmente",
       desc: "Crie conteúdos criativos que façam desejar as peças da Delta Fitness pelo histórico de experiência de peças anteriores."
+    },
+    {
+      title: "Prazos",
+      desc: "A Pré-Venda para adquirir em condições exclusivas é entre 21/04 - 28/04. E a informação das peças chegarem é para o final de Maio (prazo máximo)."
     }
   ];
 
