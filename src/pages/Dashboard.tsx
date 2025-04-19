@@ -212,9 +212,9 @@ const Dashboard: React.FC = () => {
 
           <div className="mt-4">
             <p>
-              IDEALIZADO POR{" "}
+              iDealizado por{" "}
               <a 
-                href="https://instagram.com/arinelson.me" 
+                href="https://arinelson.space/links" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#33C3F0] hover:text-[#1EAEDB] transition-colors font-medium"
@@ -222,7 +222,7 @@ const Dashboard: React.FC = () => {
                   textShadow: "0 0 10px rgba(51, 195, 240, 0.5)",
                 }}
               >
-                ARINELSON SANTOS
+                Arinelson Santos
               </a>
             </p>
           </div>
