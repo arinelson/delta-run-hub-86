@@ -7,11 +7,11 @@ const DontsTab: React.FC = () => {
   const dontsItems = [
     {
       title: "Não esqueça o link personalizado",
-      desc: "Publicações sem o link não serão contabilizadas e podem prejudicar sua performance na campanha."
+      desc: "Publicações sem o link não serão contabilizadas e podem prejudicar sua performance na campanha. Volte a etapas anteriores e salve e teste o seu link para garantir que você viu que estaá funcionando."
     },
     {
       title: "Não divulgue preços específicos",
-      desc: "Evite mencionar valores exatos dos produtos. Apenas reforce que estão \"muito abaixo do normal\" ou \"imperdíveis\"."
+      desc: "Evite mencionar valores exatos dos produtos. Apenas reforce que estão \"muito abaixo do normal\" ou \"imperdíveis\". Exceto se for no privado ou realmente uma necessidade de informar para o seu público, então vai da percepção que você tiver do seu público."
     },
     {
       title: "Não promova links externos",
