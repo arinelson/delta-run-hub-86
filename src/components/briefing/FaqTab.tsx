@@ -51,7 +51,19 @@ const FaqTab: React.FC = () => {
   {
       question: "Como devo fazer a campanha nos Stories se não teve nenhum exemplo de como poderia ser feito?",
       answer: "Valorizamos muito a individualidade de cada influencer e por isso foi decidido não exigir muitos pontos, apenas o essencial do que deveria ter, que você pode conferir na seção DO e DONT. Todavia, adaptamos para cada influencer ficar livre para usar nos seus conteúdos fitness com a percepção da própria audiência."
-    }
+    },
+   {
+      question: "Caso o meu link pare de funcionar durante a campanha, o que devo fazer?",
+      answer: (
+        <>
+          Caso seja uma decisão rápida, você pode usar um gerador de mensagem personalizada para o WhatsApp.{' '}
+          <a href="https://arinelson.space/links" target="_blank" rel="noopener noreferrer">
+            CLIQUE AQUI
+          </a>
+          .
+        </>
+      ),
+    },
   ];
 
   return (
