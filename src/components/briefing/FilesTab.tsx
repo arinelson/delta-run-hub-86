@@ -24,7 +24,7 @@ const FilesTab: React.FC = () => {
   const fileSections: FileSection[] = [
     {
       icon: FileImage,
-      title: "Imagens das Peças",
+      title: "Mídias das Peças",
       links: [
         { href: "https://drive.google.com/drive/folders/1c8fWWB4bxmD4Rw0t4kwYChRcXMUY8Oag?usp=sharing", text: "Mídias das Peças da Pré-Venda", target: "_blank" },
         { href: "https://drive.google.com/drive/folders/1O7JdwDqjiV5GQwI1QUKpkAoRnlX9-Dxe?usp=sharing", text: "Criativos das Peças da Pré-Venda", target: "_blank" }
@@ -35,9 +35,9 @@ const FilesTab: React.FC = () => {
       icon: FileText,
       title: "Informações Técnicas",
       links: [
-        { href: "#", text: "Catálogo Completo" },
-        { href: "#", text: "Especificações dos Tecidos" },
-        { href: "#", text: "Guia de Medidas" }
+       /* { href: "#", text: "Catálogo Completo" },*/
+        { href: "https://drive.google.com/drive/folders/1dxIsHlK52fKgIrMCNWDJBrKVpNFZh6kW?usp=sharing", text: "Especificações das Peças", target: "_blank" }
+       /* { href: "#", text: "Guia de Medidas" }*/
       ]
     },
     {
