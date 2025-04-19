@@ -18,7 +18,7 @@ export const users: User[] = [
     password: "@johnalvesRun2025",
     displayName: "John Alves",
     avatarId: 1,
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/JOHN10RunMuscle"
   },
   {
@@ -27,7 +27,7 @@ export const users: User[] = [
     password: "@gabrielRun2025",
     displayName: "Gabriel",
     avatarId: 2,
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/GABRIEL10RunMuscle"
   },
   {
@@ -36,7 +36,7 @@ export const users: User[] = [
     password: "@gabrielleRun2025",
     displayName: "Gabrielle",
     avatarId: 11, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/GABS10RunMuscle"
   },
   {
@@ -45,7 +45,7 @@ export const users: User[] = [
     password: "@moanaRun2025",
     displayName: "Moana",
     avatarId: 12, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/MOANA10RunMuscle"
   },
   {
@@ -54,7 +54,7 @@ export const users: User[] = [
     password: "@cailaneRun2025",
     displayName: "Cailane",
     avatarId: 14, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/CAILANE10RunMuscle"
   },
   {
@@ -63,7 +63,7 @@ export const users: User[] = [
     password: "@mayaraRun2025",
     displayName: "Mayara",
     avatarId: 16, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/MAYARA10RunMuscle"
   },
   {
@@ -72,7 +72,7 @@ export const users: User[] = [
     password: "@cianeRun2025",
     displayName: "Ciane",
     avatarId: 3,
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/CIANE10RunMuscle"
   },
   {
@@ -81,7 +81,7 @@ export const users: User[] = [
     password: "@lucasferreiraRun2025",
     displayName: "Lucas Ferreira",
     avatarId: 7,
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/LUCAS10RunMuscle"
   },
   {
@@ -90,7 +90,7 @@ export const users: User[] = [
     password: "@brunasantoRun2025",
     displayName: "Bruna Santo",
     avatarId: 13, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/BRUNA10RunMuscle"
   },
   {
@@ -99,7 +99,7 @@ export const users: User[] = [
     password: "@anagodoyRun2025",
     displayName: "Ana Godoy",
     avatarId: 15, // Female fitness avatar
-    themeColor: "white",
+    themeColor: "yellow",
     personalLink: "https://tinyurl.com/GODOY10RunMuscle"
   }
 ];
