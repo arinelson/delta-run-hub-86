@@ -72,12 +72,14 @@ const ContentTab: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-start gap-3">
         <Zap className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
         <div className="w-full">
-          <h3 className="text-lg font-semibold">BÔNUS: Reels (Opcional)</h3>
-          <p className="break-words">Se quiser se destacar ainda mais, crie um Reel criativo mostrando as peças em ação (ex.: durante um treino, em um dia casual, etc.).</p>
+          <h3 className="text-lg font-semibold">BÔNUS: Reels/Carrossel (Opcional)</h3>
+          <p className="break-words">Considerando que ao longo da semana você vai postar conteúdos variáveis no seu perfil, aqui fica opcional você criar ideias tanto para reels ou carrosseis com o objetivo de propagar seu link, mesmo que seja para a pré-venda e, consequentemente, não tenha como mostrar as peças em tempo real.
+
+          Adaptação e criatividade aqui reina, então deixamos à vontade nessa etapa. Só verificar a parte do DO e DONT ao lado para lembrar do essencial.</p>
           <p className="mt-2 break-words">Exemplo de ideias criativas:</p>
           <ul className="list-disc pl-6 space-y-1 mt-1">
-            <li className="break-words">"Quem vai garantir a peça antes de mim?"</li>
-            <li className="break-words">Desafios ou teasers mostrando como as peças combinam com diferentes estilos de vida.</li>
+            <li className="break-words">Mostrando trechos do seu dia a dia em treino em reels e com a voz narrada e com o storytelling sendo bem construído para no final você divulgar o seu CTA.</li>
+            <li className="break-words">Carrossel com fotos aleatórias do seu dia e dia e a narrativa sendo construída para no final você fazer o seu CTA.</li>
           </ul>
         </div>
       </div>
