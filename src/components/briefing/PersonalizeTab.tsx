@@ -11,14 +11,14 @@ const PersonalizeTab: React.FC = () => {
     },
     {
       title: "Horário de postagem",
-      desc: "Escolha o melhor horário para engajamento com base no comportamento do seu público."
+      desc: "Escolha o melhor horário para engajamento com base no comportamento do seu público, dentro do período da campanha que é (21/04 - 28/04)"
     },
     {
       title: "Exemplos de frases",
-      desc: "Personalize as legendas ou scripts dos vídeos, desde que mantenham a mensagem-chave da campanha."
+      desc: "Personalize as legendas ou scripts dos vídeos e/ou stories, desde que mantenham a mensagem-chave da campanha."
     },
     {
-      title: "Ideias criativas (Reels)",
+      title: "Ideias criativas (Reels/Carrosseis)",
       desc: "Sinta-se à vontade para criar desafios, teasers ou dinâmicas próprias para engajar ainda mais seus seguidores."
     }
   ];
@@ -45,9 +45,9 @@ const PersonalizeTab: React.FC = () => {
         <div className="flex items-center space-x-6">
           <div className="text-center">
             <p className="text-sm font-medium mb-1">E-mail para dúvidas:</p>
-            <a href="mailto:contato@deltafitness.com" className="text-delta-neon hover:underline text-sm flex items-center">
+            <a href="deltafitnessbrasil@gmail.com" className="text-delta-neon hover:underline text-sm flex items-center">
               <Link className="h-3 w-3 mr-1" />
-              contato@deltafitness.com
+              Email
             </a>
           </div>
           
@@ -55,7 +55,7 @@ const PersonalizeTab: React.FC = () => {
             <p className="text-sm font-medium mb-1">WhatsApp:</p>
             <a href="https://wa.me/5500000000000" className="text-delta-neon hover:underline text-sm flex items-center">
               <Link className="h-3 w-3 mr-1" />
-              (00) 00000-0000
+              WhastApp
             </a>
           </div>
         </div>
