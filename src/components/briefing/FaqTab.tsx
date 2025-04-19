@@ -58,6 +58,11 @@ const FaqTab: React.FC = () => {
       question: "Posso recomendar o site?",
       answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha. Dito isso, recomendamos que não leve ainda para o site se o objetivo for a compra final."
     },
+
+    {
+      question: "É obrigatório fazer campanha apenas no Instagram??",
+      answer: "Absolutamente não. Embora seja o canal com maior visibilidade mas você pode usar qualquer outro meio para divulgar o seu link, seja TikTok, Pinterest, Facebook e afins, ou grupos de WhatsApp que você esteja inserido e adapte a sua estratégia pra cada canal de comunicação. Assim como também autorizamos fazer prospecção ativa com amigos, familiares ou pessoas que podem se interessar pelas peças da Delta Fitness Brazil. Apenas não recomendamos fazer spam em nenhum deles"
+    },
   {
       question: "Como devo fazer a campanha nos Stories se não teve nenhum exemplo de como poderia ser feito?",
       answer: "Valorizamos muito a individualidade de cada influencer e por isso foi decidido não exigir muitos pontos, apenas o essencial do que deveria ter, que você pode conferir na seção DO e DONT. Todavia, adaptamos para cada influencer ficar livre para usar nos seus conteúdos fitness com a percepção da própria audiência."
