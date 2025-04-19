@@ -47,7 +47,7 @@ const PersonalizeTab: React.FC = () => {
             <p className="text-sm font-medium mb-1">E-mail para dúvidas:</p>
             <a href="mailto:deltafitnessbrasil@gmail.com" className="text-delta-neon hover:underline text-sm flex items-center">
               <Link className="h-3 w-3 mr-1" />
-              Email
+              Contato
             </a>
           </div>
           
@@ -55,7 +55,7 @@ const PersonalizeTab: React.FC = () => {
             <p className="text-sm font-medium mb-1">WhatsApp:</p>
             <a href="https://wa.me/558293460460?text=Queria%20tirar%20d%C3%BAvidas%20sobre%20o%20https%3A%2F%2Fdeltarunmuscle.netlify.app%2F%20%20%F0%9F%92%AA%F0%9F%96%A4." className="text-delta-neon hover:underline text-sm flex items-center">
               <Link className="h-3 w-3 mr-1" />
-              WhastApp
+              Para dúvdas
             </a>
           </div>
         </div>
