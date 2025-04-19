@@ -44,6 +44,16 @@ const FaqTab: React.FC = () => {
       question: "Posso divulgar outras marcas junto com a Delta Run Muscle?",
       answer: "Não recomendamos a divulgação simultânea de outras marcas de vestuário fitness no mesmo conteúdo da campanha Delta Run Muscle para evitar confusão entre os seus seguidores."
     },
+
+    {
+      question: "E se eu perder a senha para entrar aqui?",
+      answer: "Para evitar isso, salve-a em um lugar seguro, mas caso seja inevitável entre em contato com o suporte imediatamente."
+    },
+
+    {
+      question: "Qual é a vantagem da pessoa usar o meu link?",
+      answer: "Para esta campanha seria obter 10% de desconto em qualquer compra na Delta Fitness Brazil."
+    },
     {
       question: "Posso recomendar o site?",
       answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha. Dito isso, recomendamos que não leve ainda para o site se o objetivo for a compra final."
