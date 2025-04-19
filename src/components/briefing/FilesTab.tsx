@@ -26,9 +26,9 @@ const FilesTab: React.FC = () => {
       icon: FileImage,
       title: "Imagens das Peças",
       links: [
-        { href: "https://drive.google.com/drive/folders/1c8fWWB4bxmD4Rw0t4kwYChRcXMUY8Oag?usp=sharing", text: "Fotos das Peças da Pré-Venda", target: "_blank" }
-      /*{ href: "#", text: "Fotos Lifestyle" },
-        { href: "#", text: "Fotos Detalhes Técnicos" }*/
+        { href: "https://drive.google.com/drive/folders/1c8fWWB4bxmD4Rw0t4kwYChRcXMUY8Oag?usp=sharing", text: "Mídias das Peças da Pré-Venda", target: "_blank" },
+        { href: "https://drive.google.com/drive/folders/1O7JdwDqjiV5GQwI1QUKpkAoRnlX9-Dxe?usp=sharing", text: "Criativos das Peças da Pré-Venda", target: "_blank" }
+       /* { href: "#", text: "Fotos Detalhes Técnicos" }*/
       ]
     },
     {
