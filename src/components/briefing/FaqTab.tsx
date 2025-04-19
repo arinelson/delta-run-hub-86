@@ -45,8 +45,8 @@ const FaqTab: React.FC = () => {
       answer: "Não recomendamos a divulgação simultânea de outras marcas de vestuário fitness no mesmo conteúdo da campanha Delta Run Muscle para evitar confusão entre os seus seguidores."
     },
     {
-      question: "Posso levar para o site?",
-      answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha."
+      question: "Posso recomendar o site?",
+      answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha. Dito isso, recomendamos que não leve ainda para o site se o objetivo for a compra final."
     }
   ];
 
