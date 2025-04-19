@@ -47,7 +47,7 @@ const PersonalizeTab: React.FC = () => {
             <p className="text-sm font-medium mb-1">E-mail para dúvidas:</p>
             <a href="mailto:deltafitnessbrasil@gmail.com" className="text-delta-neon hover:underline text-sm flex items-center">
               <Link className="h-3 w-3 mr-1" />
-              Contato
+              Mande um email
             </a>
           </div>
           
