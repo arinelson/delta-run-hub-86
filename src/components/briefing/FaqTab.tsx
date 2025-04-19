@@ -10,16 +10,16 @@ const FaqTab: React.FC = () => {
   const faqItems = [
     {
       question: "Como faço para acessar o material completo da campanha?",
-      answer: "Todo o material está disponível na seção 'Arquivos' do dashboard ou você pode baixar ele de forma completa em 'Arquivos de Suporte' na seção de Arquivos. Recomendamos que baixe ele no seu dispositivo. Caso tenha problemas para acessar algum arquivo específico, entre em contato conosco pelo WhatsApp."
+      answer: "Todo o material está disponível na seção 'Arquivos' do dashboard ou você pode baixar ele de forma completa em 'Arquivos de Suporte' em 'Briefing em PDF'. Recomendamos que baixe ele no seu dispositivo para acessar offline, caso seja necessário. Caso tenha problemas para acessar algum arquivo específico, entre em contato conosco pelo WhatsApp."
     },
     {
       question: "Até quando posso divulgar a pré-venda?",
       answer: "A fase de pré-venda vai até o dia 28 do mês de Abril. Após esta data, os preços voltarão ao normal e todas as peças estarão disponíveis na loja online oficial após as peças chegarem. Contudo, mesmo sem a pré-venda da Linha Run você pode continuar divulgando seu link para necessidades de compra na Delta Fitness"
     },
-    /*{
-      question: "Como recebo minha comissão pelas vendas?",
-      answer: "As comissões são calculadas com base nas vendas realizadas através do seu link personalizado. Os pagamentos são processados todo dia 10 do mês seguinte às vendas."
-    },*/
+    {
+      question: "Por que estão fazendo uma campanha se nao tem as peças em mãos ainda?",
+      answer: "Embora isso possa soar uma boa objeção, mas o objetivo da Pré-venda é justamente gerar desejo prévio antes das peças chegarem À essa altura do branding da marca, podemos fazer isso sem prejudicar a experiência do usuário porque temos know-how do que estamos fazendo e a estratégia foi redesenhada com essa campanha fugaz."
+    },
     {
       question: "Posso usar minhas próprias fotos das peças?",
       answer: "Mesmo que você esteja divulgando a pré-venda da Linha Run, isto é, peças que não estão no estoque disponível mas com oportunidade exclusiva de adquirí-las antes de todo mundo, é recomendável que você esteja usando qualquer peça da Delta Fitness Brazil quando você estiver aparecendo nos stories."
@@ -47,6 +47,10 @@ const FaqTab: React.FC = () => {
     {
       question: "Posso recomendar o site?",
       answer: "Embora o site esteja funcionando, mas ele está passando por remodelagens de design, então criamos esta camapanha para levar, exclusivamente, para o WhatsApp com o seu link personalizado com o objetivo de obter um maior controle sobre a interação da campanha. Dito isso, recomendamos que não leve ainda para o site se o objetivo for a compra final."
+    },
+  {
+      question: "Como devo fazer a campanha nos Stories se não teve nenhum exemplo de como poderia ser feito?",
+      answer: "Valorizamos muito a individualidade de cada influencer e por isso foi decidido não exigir muitos pontos, apenas o essencial do que deveria ter, que você pode conferir na seção DO e DONT. Todavia, adaptamos para cada influencer ficar livre para usar nos seus conteúdos fitness com a percepção da própria audiência."
     }
   ];
 
