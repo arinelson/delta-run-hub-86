@@ -51,13 +51,13 @@ const ContentTab: React.FC = () => {
         <div className="w-full">
           <h3 className="text-lg font-semibold">Foco Principal: Stories</h3>
           <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li className="break-words">Publique Stories mostrando a prévia das peças da linha Delta Run Muscle.</li>
+            <li className="break-words">Publique Stories (entre 3 a 7 stories) mostrando a prévia das peças da linha Delta Run Muscle.</li>
             <li className="break-words">Use seu link personalizado, que direcionará os interessados diretamente ao WhatsApp da Delta Fitness Brazil com sua identificação.</li>
             <li className="break-words">
-              Inclua um call-to-action claro, como:
+             Inclua um último call-to-action no final do stories incluindo o seu link personalizado, como:
               <div className="mt-2 p-3 bg-black/30 rounded-lg overflow-hidden">
                 <p className="break-words">
-                  "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas! Corre lá no meu link e garanta sua peça antes de todo mundo: 
+                  "Essa é a sua chance de fazer parte do Team Delta com condições exclusivas para a pré-venda da Linha Run! Corre lá no meu link e garanta sua peça antes de todo mundo: 
                   <span className="text-delta-neon block mt-1 overflow-x-auto pb-1">
                     {user?.personalLink}
                   </span>"
