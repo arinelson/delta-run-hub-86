@@ -57,7 +57,7 @@ const FaqTab: React.FC = () => {
       answer: (
         <>
           Caso seja uma decisão rápida, você pode usar um gerador de mensagem personalizada para o WhatsApp.{' '}
-          <a href="https://arinelson.space/links" target="_blank" rel="noopener noreferrer">
+          <a href="https://arinelson.space/links" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
             CLIQUE AQUI
           </a>
           .
