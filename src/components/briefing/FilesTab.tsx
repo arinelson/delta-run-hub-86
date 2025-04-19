@@ -115,8 +115,7 @@ const FilesTab: React.FC = () => {
         <p className="text-center text-xs sm:text-sm">
           Todos os arquivos são de uso exclusivo para influenciadores do Team Delta.
           Não compartilhe estes materiais com terceiros.
-          <\n>
-          <\n>
+  
         </p>
       </div>
     </TabsContent>
