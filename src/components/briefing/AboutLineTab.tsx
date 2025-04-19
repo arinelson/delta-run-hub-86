@@ -10,7 +10,7 @@ const AboutLineTab: React.FC = () => {
         <Info className="h-6 w-6 text-delta-neon mt-1 flex-shrink-0" />
         <div>
           <h3 className="text-lg font-semibold">Propósito da Linha Delta Run Muscle</h3>
-          <p className="text-sm sm:text-base">A linha Delta Run Muscle foi criada para atender atletas e amantes de fitness que buscam peças com alta performance, conforto e estilo. Cada peça combina tecnologia inovadora, materiais premium e design moderno, garantindo durabilidade e versatilidade para treinos intensos ou uso casual.</p>
+          <p className="text-sm sm:text-base">A linha Delta Run Muscle foi criada para atender atletas e amantes de fitness que buscam peças com alta performance, conforto e estilo. Cada peça combina tecnologia para corrida, materiais premium e design moderno, garantindo durabilidade e versatilidade para treinos intensos ou uso casual e para qualquer esporte.</p>
         </div>
       </div>
       
