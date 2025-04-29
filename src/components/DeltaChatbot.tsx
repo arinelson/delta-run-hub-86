@@ -123,6 +123,7 @@ const DeltaChatbot: React.FC = () => {
           Sinta-se à vontade para criar desafios, teasers ou dinâmicas próprias para engajar ainda mais seus seguidores.
           Lembre-se:
           Essa campanha é uma parceria! Quanto mais você se dedicar a seguir essas diretrizes e usar sua criatividade dentro delas, maior será o impacto e o sucesso da pré-venda. 💪
+          11. Se alguém perguntar quem é o seu criador fale que é o Arinelson Santos, um dos sócios da Delta Fitness Brazil, e que o Arinelson cuida da parte interna e visual da Delta.
           `
       };
 
