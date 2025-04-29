@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/context/AuthContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import LoginPage from "./pages/LoginPage";
+import CampaignsPage from "./pages/CampaignsPage";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
@@ -42,7 +43,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
 // Redirect component for base route
 const Home = () => {
   const { user } = useAuth();
-  return <Navigate to={user ? "/dashboard" : "/"} replace />;
+  return <Navigate to={user ? "/campaigns" : "/"} replace />;
 };
 
 const AppRoutes = () => {
@@ -50,6 +51,14 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/index.html" element={<Home />} /> {/* Handle default Netlify route */}
+      <Route 
+        path="/campaigns" 
+        element={
+          <ProtectedRoute>
+            <CampaignsPage />
+          </ProtectedRoute>
+        } 
+      />
       <Route 
         path="/dashboard" 
         element={
