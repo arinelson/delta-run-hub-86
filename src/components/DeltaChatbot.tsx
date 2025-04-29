@@ -114,7 +114,7 @@ const DeltaChatbot: React.FC = () => {
         userMessage
       ];
       
-      const apiKey = import.meta.env.VITE_GROK_DELTAHUB || process.env.VITE_GROK_DELTAHUB;
+      const apiKey = import.meta.env.VITE_GROK_DELTAHUB; //|| process.env.VITE_GROK_DELTAHUB;
       
       if (!apiKey) {
         throw new Error("API key not found");
