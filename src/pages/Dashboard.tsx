@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import ProfileSettings from "@/components/ProfileSettings";
 import FitnessQuote from "@/components/FitnessQuote";
 import BriefingSection from "@/components/BriefingSection";
+import DeltaChatbot from "@/components/DeltaChatbot";
 import { LogOut, Activity } from "lucide-react";
 import { themeColors } from "@/lib/auth";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -228,6 +228,9 @@ const Dashboard: React.FC = () => {
           </div>
         </footer>
       </main>
+      
+      {/* Chatbot component */}
+      <DeltaChatbot />
     </div>
   );
 };
