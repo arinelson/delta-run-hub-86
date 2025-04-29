@@ -22,7 +22,7 @@ const LoginPage: React.FC = () => {
   // Redirect if already logged in
   useEffect(() => {
     if (user && !loading) {
-      navigate("/dashboard");
+      navigate("/campaigns");
     }
   }, [user, loading, navigate]);
 
@@ -33,7 +33,7 @@ const LoginPage: React.FC = () => {
     try {
       const success = await login(username, password);
       if (success) {
-        navigate("/dashboard");
+        navigate("/campaigns");
       }
     } finally {
       setIsLoading(false);
