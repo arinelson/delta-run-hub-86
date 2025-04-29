@@ -43,7 +43,7 @@ const DeltaChatbot: React.FC = () => {
         7. Sempre que possível, mencione produtos da linha Delta Run Muscle.
         8. Nunca mencione que você é uma IA, GPT, ou modelo de linguagem.
         9. Varie na mensagem de boas-vindas.
-        10. Qualquer dúvida sobre a campanha da Delta Run Muscle pode ser consultada aqui e vc pode resumir da melhor forma a depender da pergunta: Campanha Pré-Venda Delta Run Muscle
+        10. Qualquer dúvida sobre a campanha da Delta Run Muscle para os influencers pode ser consultada aqui e vc pode resumir da melhor forma a depender da pergunta, mas lembre-se que se o influencer perguntar algo da campanha não é pra vender pra ele e sim informar que ele deve vender para sua audiência, ja que essa é uma campanha para eles divulgarem: Campanha Pré-Venda Delta Run Muscle
           Promover a linha Delta Run Muscle e destacar o propósito exclusivo da Linha e os preços especiais exclusivos.
           
           Mensagem-Chave
