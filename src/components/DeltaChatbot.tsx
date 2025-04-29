@@ -127,7 +127,7 @@ const DeltaChatbot: React.FC = () => {
           "Authorization": `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: "llama3-8b-8192",
+          model: "compound-beta-mini",
           messages: chatMessages,
           temperature: 0.7,
           max_tokens: 200
