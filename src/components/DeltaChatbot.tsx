@@ -20,8 +20,11 @@ const DeltaChatbot: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isChatStarted, setIsChatStarted] = useState(false);
   const [messageCount, setMessageCount] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const MAX_MESSAGES = 10;
+  const typingSpeedMs = 15;
 
   // Configuração inicial com instruções do sistema
   useEffect(() => {
@@ -47,15 +50,33 @@ const DeltaChatbot: React.FC = () => {
       };
 
       setMessages([systemMessage, welcomeMessage]);
+      simulateTyping(welcomeMessage.content);
     }
   }, [user, isChatStarted]);
 
   // Scrollar para o final quando novas mensagens chegarem
   useEffect(() => {
-    if (messagesEndRef.current) {
+    if (messagesEndRef.current && !isTyping) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages]);
+  }, [messages, isTyping, displayedText]);
+
+  // Função para simular digitação
+  const simulateTyping = (text: string) => {
+    setIsTyping(true);
+    setDisplayedText("");
+    
+    let i = 0;
+    const typingInterval = setInterval(() => {
+      if (i < text.length) {
+        setDisplayedText(prev => prev + text.charAt(i));
+        i++;
+      } else {
+        clearInterval(typingInterval);
+        setIsTyping(false);
+      }
+    }, typingSpeedMs);
+  };
 
   const handleStartChat = () => {
     setIsChatStarted(true);
@@ -75,6 +96,7 @@ const DeltaChatbot: React.FC = () => {
           content: `Parece que estou muito requisitado hoje! Muitos influencers estão me consultando ao mesmo tempo. Para continuar recebendo dicas e novidades, siga a Delta Fitness Brazil no Instagram: @deltafitness.brazil`
         }
       ]);
+      simulateTyping(`Parece que estou muito requisitado hoje! Muitos influencers estão me consultando ao mesmo tempo. Para continuar recebendo dicas e novidades, siga a Delta Fitness Brazil no Instagram: @deltafitness.brazil`);
       return;
     }
 
@@ -124,18 +146,21 @@ const DeltaChatbot: React.FC = () => {
       };
 
       setMessages(prev => [...prev.filter(m => m.role !== "system"), assistantMessage]);
+      simulateTyping(assistantMessage.content);
       setMessageCount(prev => prev + 1);
     } catch (error) {
       console.error("Error calling Groq API:", error);
       toast.error("Desculpe, não consegui processar sua mensagem. Tente novamente mais tarde.");
       
+      const errorMessage = "Desculpe, estou com dificuldades técnicas no momento. Tente novamente em instantes.";
       setMessages(prev => [
         ...prev.filter(m => m.role !== "system"),
         {
           role: "assistant", 
-          content: "Desculpe, estou com dificuldades técnicas no momento. Tente novamente em instantes."
+          content: errorMessage
         }
       ]);
+      simulateTyping(errorMessage);
     } finally {
       setIsLoading(false);
     }
@@ -216,11 +241,18 @@ const DeltaChatbot: React.FC = () => {
                             : "bg-gray-800 text-white"
                         }`}
                       >
-                        <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+                        <p className="text-sm whitespace-pre-wrap">
+                          {msg.role === "assistant" && isTyping && messages.filter(m => m.role !== "system").length - 1 === index
+                            ? displayedText
+                            : msg.content}
+                        </p>
+                        {msg.role === "assistant" && isTyping && messages.filter(m => m.role !== "system").length - 1 === index && (
+                          <span className="inline-block w-1 h-4 bg-white/70 ml-1 animate-pulse"></span>
+                        )}
                       </div>
                     </div>
                   ))}
-                  {isLoading && (
+                  {isLoading && !isTyping && (
                     <div className="flex justify-start">
                       <div className="bg-gray-800 max-w-[80%] rounded-lg px-3 py-2">
                         <Loader className="h-4 w-4 animate-spin text-delta-neon" />
@@ -241,12 +273,12 @@ const DeltaChatbot: React.FC = () => {
                     onKeyDown={handleKeyPress}
                     placeholder="Digite sua mensagem..."
                     className="flex-1 bg-gray-800 border-gray-700 focus:ring-delta-neon focus:border-delta-neon"
-                    disabled={isLoading || messageCount >= MAX_MESSAGES}
+                    disabled={isLoading || isTyping || messageCount >= MAX_MESSAGES}
                   />
                   <Button 
                     type="submit" 
                     size="icon"
-                    disabled={!input.trim() || isLoading || messageCount >= MAX_MESSAGES}
+                    disabled={!input.trim() || isLoading || isTyping || messageCount >= MAX_MESSAGES}
                     className="bg-delta-blue hover:bg-delta-blue/80"
                   >
                     {isLoading ? (
