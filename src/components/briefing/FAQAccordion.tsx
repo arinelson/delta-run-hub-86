@@ -9,7 +9,7 @@ import {
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;  // Alterado de string para React.ReactNode para aceitar elementos JSX
 }
 
 interface FAQAccordionProps {
