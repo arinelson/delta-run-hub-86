@@ -65,7 +65,7 @@ const LoginPage: React.FC = () => {
             </div>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-            <span className="text-delta-neon">Delta</span> Run Muscle
+            <span className="text-delta-neon">Delta</span> Hub
           </h1>
           <p className="text-gray-300 text-sm sm:text-base">Acesse a área exclusiva de influenciadores</p>
         </div>
